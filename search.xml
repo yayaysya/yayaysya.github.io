@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[第一篇博客]]></title>
+    <url>%2F2017%2F09%2F01%2FFirstDay%2F</url>
+    <content type="text"><![CDATA[先聊两句虽说文章的名字是第一篇博客, 但是实际上自己写博客已经很久了, 只是之前一直在wordpress上面写, 虽然文章数量不少, 但是都是质量堪忧, 只起到了玩玩的目的.现在买了一个vps, 利用hexo来做了自己的博客, 希望之后能做成一个很好的博客网站, 分享自己觉得好玩的东西,同时与更多的老司机进行交流. 板块设定之前的网站一直都没有很好的条理, 感觉很乱, 现在觉得自己应该提前想好做那几块的东西.鉴于自己的工作以及兴趣爱好, 觉得暂时设定下面几个板块比较合适 生活杂记 好软挖掘 影视分享 技术小栈1 技术小栈2 技术小栈3 杂物箱 更新频率自己由于工作的原因, 时间一般不固定, 所以更新的可能不是很规律, 先这样吧, 等之后完善后看看是否能有规律的进行更新 关于自己github yayaysyaweibosongshouli]]></content>
+      <categories>
+        <category>生活杂记</category>
+      </categories>
+      <tags>
+        <tag>tag1</tag>
+      </tags>
+  </entry>
+</search>
