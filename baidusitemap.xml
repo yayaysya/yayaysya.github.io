@@ -4,11 +4,31 @@
 
     
   <url>
-    <loc>https://yayaysya.github.io/2017/09/29/LinuxCommandFree/</loc>
-    <lastmod>2017-09-29T08:35:03.978Z</lastmod>
+    <loc>https://yayaysya.github.io/2017/09/04/jianzhanNote1/</loc>
+    <lastmod>2017-09-29T08:47:46.867Z</lastmod>
     <data>
         <display>
-        <title>\[Linux命令\]free</title>
+        <title>基于vps和github下的博客建立(TBD)</title>
+        <pubTime>2017-09-04T11:55:28.264Z</pubTime>
+        
+        <tag>vps</tag>
+         
+         
+           
+             
+              <breadCrumb title="hexo" url="https://yayaysya.github.io/categories/hexo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://yayaysya.github.io/2017/09/29/LinuxCommandFree/</loc>
+    <lastmod>2017-09-29T08:46:39.198Z</lastmod>
+    <data>
+        <display>
+        <title>Linux命令-free</title>
         <pubTime>2017-09-29T08:15:41.752Z</pubTime>
         
         <tag>free</tag>
@@ -18,21 +38,6 @@
              
               <breadCrumb title="Linux" url="https://yayaysya.github.io/categories/Linux/"/>
           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://yayaysya.github.io/2017/09/04/jianzhanNote1/</loc>
-    <lastmod>2017-09-29T08:15:33.039Z</lastmod>
-    <data>
-        <display>
-        <title>基于vps和github下的博客建立(TBD)</title>
-        <pubTime>2017-09-04T11:55:28.264Z</pubTime>
-        
-         
-           
         </display>
     </data>
     </url>
