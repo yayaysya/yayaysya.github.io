@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[\[Linux命令\]free]]></title>
+    <url>%2F2017%2F09%2F29%2FLinuxCommandFree%2F</url>
+    <content type="text"><![CDATA[命令的使用 参数的含义1234567MEM： total：总计物理内存大小 used：已经使用的物理内存大小 free： 空闲的物理内存大小 shared：多个进程共享的内存空间 buffer：缓冲 cache：缓存 常用的选项1234567usage: free [-b|-k|-m|-g] [-l] [-o] [-t] [-s delay] [-c count] [-V] -b,-k,-m,-g show output in Bytes, KB, MB, or GB 用来指定输出的单位。 -l show detailed low and high memory statistics 可以看到详细的最大最小值 -o use old format (no -/+buffers/cache line) 以老的格式显示，没有-/+buffers/cache line那一行 -t display total for RAM + swap ：会显示内存的总和，包括物理内存和swap分区大小。 -s update every [delay] seconds ： 输出结果每秒刷新一次 -c update [count] times ：刷新次数 -V display version information and exit ：显示版本信息。 注意 buffer与cache buffer缓冲区:将数据缓冲下来，解决速度慢和快的交接；速度快的需要通过缓冲区将数据一点一点传给速度慢的区域。例如：从内存中将数据往硬盘中写入，并不是直接写入，而是缓冲到一定大小之后刷入硬盘中。cached缓冲区:实现数据的重复使用，速度慢的需要通过缓存将经常要用到的数据缓存起来，缓存下来的数据可以提供高速的传输给速度快的设备。例如：将硬盘中的数据读取出来放在内存的缓存区中，这样以后再次访问同一个资源，速度回快很多。目的:为了提高IO的性能, 性能调优清空cached与buffer:与/proc/sys/vm/drop_caches这个内核参数有关 swap分区 介绍:内存不够用的时候，从硬盘上找一部分空间，将内存中最近最少使用的数据挪到硬盘的空间里。这段在硬盘中的空间就是swap分区。 参考文献1.http://www.stackops.info/2015/09/20/Linux%E5%91%BD%E4%BB%A4%E8%AF%A6%E8%A7%A3-free/index.html]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>free</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[基于vps和github下的博客建立(TBD)]]></title>
+    <url>%2F2017%2F09%2F04%2FjianzhanNote1%2F</url>
+    <content type="text"><![CDATA[自己原本的 vpn 到期了,服务商的网站不知道为什么打不开了. 可能是被关停了吧. 所以前段时间才想再买个 vpn ,查了很久发现说vps 用来clip墙 很合适, 所以就买了搬瓦工 最便宜的套餐.完成我的目的后, 发现vps光用来clip墙有点浪费, 于是就考虑把个人的博客建立在上面. 建站过程购买并设置vps选择合适的套餐简单的设置配置SS线下主机配置安装git bash安装hexovps配置安装nginx安装gitgithub配置遇到的问题安装过程中的问题使用中的问题参考链接]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[图床服务]]></title>
     <url>%2F2017%2F09%2F01%2Ftuchuang%2F</url>
     <content type="text"><![CDATA[新建立的博客, 之后可能文章会比较多, 所以如果把图片全部放到vps中, 那么可能访问速度会比较慢.所以考虑图床服务, 大家都在用七牛云, 于是就拿它来试试 步骤注册七牛云账号点击这里注册七牛云 新建对象储存1.点击新建对象储存起一个存储空间名2.保存空间概览–测试域名3.点击个人面板–密钥管理保存AK 和 SK两个密钥 在Mpic中填写配置下载MPic软件Mpic地址 填写配置将之前的保存的AK SK密钥填写进去, 再将保存的测试域名填写进去 上传测试可以看到, 上传成功了 遇到的坑 填写MPic的时候, 域名选择成了https:, 导致图片总是出不来, 后来改成http:再传图片就好了 参考链接1.在 iPic 中添加七牛云2. 罗朝福 图床 神器]]></content>
