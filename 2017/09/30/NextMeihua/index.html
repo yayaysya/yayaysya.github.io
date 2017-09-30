@@ -14,6 +14,13 @@
 
 
 
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
 
 
 
@@ -104,7 +111,8 @@
 <meta property="og:description" content="看到网上各种折腾next主题的, 自己也想为自己的next主题添加一下东西, 也为了让自己以后写博客更有动力, 参考了很多网上的东西, 先暂时添加一下的内容, 以后如果发现好玩的还会去更新">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://ovlptpuvi.bkt.clouddn.com/blog/170930/FJDFh5A5AI.png?imageslim">
-<meta property="og:updated_time" content="2017-09-30T04:17:28.486Z">
+<meta property="og:image" content="http://ovlptpuvi.bkt.clouddn.com/blog/170930/0b7ag8dhlK.png?imageslim">
+<meta property="og:updated_time" content="2017-09-30T05:20:31.664Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="next主题美化">
 <meta name="twitter:description" content="看到网上各种折腾next主题的, 自己也想为自己的next主题添加一下东西, 也为了让自己以后写博客更有动力, 参考了很多网上的东西, 先暂时添加一下的内容, 以后如果发现好玩的还会去更新">
@@ -424,6 +432,17 @@
 <h2 id="修改侧边栏头像为旋转圆形"><a href="#修改侧边栏头像为旋转圆形" class="headerlink" title="修改侧边栏头像为旋转圆形"></a>修改侧边栏头像为旋转圆形</h2><p>修改文件<code>~\hexo\themes\next\source\css\_common\components\sidebar\sidebar-author.styl</code><br>原本是<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.site-author-image</span> &#123;</div><div class="line">  <span class="attribute">display</span>: block;</div><div class="line">  <span class="attribute">margin</span>: <span class="number">0</span> auto;</div><div class="line">  <span class="attribute">padding</span>: $site-author-image-padding;</div><div class="line">  <span class="attribute">max-width</span>: $site-author-image-width;</div><div class="line">  <span class="attribute">height</span>: $site-author-image-height;</div><div class="line">  <span class="attribute">border</span>: $site-author-image-border-width solid $site-author-image-border-color;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>修改为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">.site-author-image &#123;</div><div class="line">  display: block;</div><div class="line">  margin: 0 auto;</div><div class="line">  max-width: 96px;</div><div class="line">  height: auto;</div><div class="line">  border: 2px solid #333;</div><div class="line">  padding: 2px;</div><div class="line">  border-radius: 50%</div><div class="line">  webkit-transition: 1.4s all;</div><div class="line">  moz-transition: 1.4s all;</div><div class="line">  ms-transition: 1.4s all;</div><div class="line">  transition: 1.4s all;</div><div class="line">&#125;</div><div class="line">.site-author-image:hover &#123;</div><div class="line">  background-color: #55DAE1;</div><div class="line">  webkit-transform: rotate(360deg) scale(1.1);</div><div class="line">  moz-transform: rotate(360deg) scale(1.1);</div><div class="line">  ms-transform: rotate(360deg) scale(1.1);</div><div class="line">  transform: rotate(360deg) scale(1.1);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>成功添加后效果<br><img src="http://ovlptpuvi.bkt.clouddn.com/blog/170930/FJDFh5A5AI.png?imageslim" alt="mark"></p>
+<h2 id="添加鼠标样式"><a href="#添加鼠标样式" class="headerlink" title="添加鼠标样式"></a>添加鼠标样式</h2><p><code>themes/next/source/css/_custom/custom.styl</code>中添加代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">// 鼠标样式</div><div class="line">  * &#123;</div><div class="line">      cursor: url(&quot;http://om8u46rmb.bkt.clouddn.com/sword2.ico&quot;),auto!important</div><div class="line">  &#125;</div><div class="line">  :active &#123;</div><div class="line">      cursor: url(&quot;http://om8u46rmb.bkt.clouddn.com/sword1.ico&quot;),auto!important</div><div class="line">  &#125;</div></pre></td></tr></table></figure></p>
+<p>未找到合适的鼠标样式的图片, 先暂时不添加了<span id="inline-purple">TBD</span></p>
+<p>##文章的宽度<br>参考<a href="http://wanzhiyu.top/2017/01/20/%E6%95%99%E7%A8%8B/Hexo/Hexo-Next%E4%B8%BB%E9%A2%98%E5%AE%BD%E5%BA%A6%E8%B0%83%E8%8A%82/" target="_blank" rel="external">wanzhiyu.top</a>中的介绍</p>
+<h3 id="修改方法"><a href="#修改方法" class="headerlink" title="修改方法"></a>修改方法</h3><p>1.打开<code>\themes\next\source\css\_common\components\post\post-expand.styl</code>文件<br>修改<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@media (max-width: 767px)</div></pre></td></tr></table></figure></p>
+<p>为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@media (max-width: 1080px)</div></pre></td></tr></table></figure></p>
+<p>2.打开<code>\themes\next\source\css\ _variables\base.styl</code><br>修改<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$main-desktop                   = 960px</div><div class="line">$main-desktop-large             = 1200px</div><div class="line">$content-desktop                = 700px</div></pre></td></tr></table></figure></p>
+<p>为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$main-desktop                   = 1080px</div><div class="line">$main-desktop-large             = 1200px</div><div class="line">$content-desktop                = 810px</div></pre></td></tr></table></figure></p>
+<p>3.打开<code>\themes\next\source\css\_schemes\Pisces\_layout.styl</code>, 修改<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.header &#123;</div><div class="line">  position: relative;</div><div class="line">  margin: 0 auto;</div><div class="line">  width: 1080px;</div></pre></td></tr></table></figure></p>
+<h1 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h1><ul>
+<li><strong>颜色标签不显示</strong><br>现在发现颜色标签还是不显示<br>好吧, 是网络的问题, 刚才没有及时更新, 现在好了, 已经可以正常显示了<br><img src="http://ovlptpuvi.bkt.clouddn.com/blog/170930/0b7ag8dhlK.png?imageslim" alt="mark"></li>
+</ul>
 <h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><ol>
 <li><a href="http://www.lazyboy.site/2017/Next%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A0%B7%E5%BC%8F/" target="_blank" rel="external">http://www.lazyboy.site/2017/Next%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A0%B7%E5%BC%8F/</a></li>
 <li><a href="http://www.vitah.net/posts/20f300cc/" target="_blank" rel="external">http://www.vitah.net/posts/20f300cc/</a></li>
@@ -447,9 +466,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/next/" rel="tag"># next</a>
+            <a href="/tags/next/" rel="tag"><i class="fa fa-tag"></i> next</a>
           
-            <a href="/tags/hexo/" rel="tag"># hexo</a>
+            <a href="/tags/hexo/" rel="tag"><i class="fa fa-tag"></i> hexo</a>
           
         </div>
       
@@ -644,7 +663,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#美化内容"><span class="nav-number">1.</span> <span class="nav-text">美化内容</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#主题选择"><span class="nav-number">1.1.</span> <span class="nav-text">主题选择</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#颜色块标签"><span class="nav-number">1.2.</span> <span class="nav-text">颜色块标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文本框"><span class="nav-number">1.3.</span> <span class="nav-text">文本框</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改侧边栏头像为旋转圆形"><span class="nav-number">1.4.</span> <span class="nav-text">修改侧边栏头像为旋转圆形</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考链接"><span class="nav-number">2.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#美化内容"><span class="nav-number">1.</span> <span class="nav-text">美化内容</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#主题选择"><span class="nav-number">1.1.</span> <span class="nav-text">主题选择</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#颜色块标签"><span class="nav-number">1.2.</span> <span class="nav-text">颜色块标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文本框"><span class="nav-number">1.3.</span> <span class="nav-text">文本框</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改侧边栏头像为旋转圆形"><span class="nav-number">1.4.</span> <span class="nav-text">修改侧边栏头像为旋转圆形</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加鼠标样式"><span class="nav-number">1.5.</span> <span class="nav-text">添加鼠标样式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#修改方法"><span class="nav-number">1.5.1.</span> <span class="nav-text">修改方法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#遇到的问题"><span class="nav-number">2.</span> <span class="nav-text">遇到的问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考链接"><span class="nav-number">3.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
             
 
           </div>
@@ -744,6 +763,8 @@
   
 
 
+  
+
 
 
 
@@ -771,6 +792,9 @@
 
   
   <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
 
 
   
