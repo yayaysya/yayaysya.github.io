@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://linuxcc.top/2017/10/09/DaliyReport10/</loc>
+    <lastmod>2017-10-10T12:21:09.907Z</lastmod>
+    <data>
+        <display>
+        <title>10月日志</title>
+        <pubTime>2017-10-09T10:28:19.374Z</pubTime>
+        
+        <tag>日志</tag>
+         
+         
+           
+             
+              <breadCrumb title="日志" url="http://linuxcc.top/categories/%E6%97%A5%E5%BF%97/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://linuxcc.top/2017/10/10/CSAPP02/</loc>
     <lastmod>2017-10-10T10:00:25.069Z</lastmod>
     <data>
@@ -63,26 +83,6 @@
            
              
               <breadCrumb title="hexo" url="http://linuxcc.top/categories/hexo/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://linuxcc.top/2017/10/09/DaliyReport10/</loc>
-    <lastmod>2017-10-09T10:28:19.874Z</lastmod>
-    <data>
-        <display>
-        <title>10月日志</title>
-        <pubTime>2017-10-09T10:28:19.374Z</pubTime>
-        
-        <tag>日志</tag>
-         
-         
-           
-             
-              <breadCrumb title="日志" url="http://linuxcc.top/categories/%E6%97%A5%E5%BF%97/"/>
           
         </display>
     </data>
