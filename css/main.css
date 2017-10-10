@@ -277,15 +277,15 @@ p {
   margin: 0 0 20px 0;
 }
 a {
-  color: #555;
+  color: $my-link-blue;
   text-decoration: none;
   outline: none;
   border-bottom: 1px solid #999;
   word-wrap: break-word;
 }
 a:hover {
-  color: #222;
-  border-bottom-color: #222;
+  color: $my-link-hover-blue;
+  border-bottom-color: $my-link-hover-blue;
 }
 blockquote {
   margin: 0;
@@ -912,7 +912,7 @@ pre .javascript .function {
 }
 .post-body .tabs ul.nav-tabs li.tab.active a {
   cursor: default;
-  color: #555;
+  color: $my-link-blue;
 }
 .post-body .tabs .tab-content {
   background-color: #fff;
@@ -1585,11 +1585,11 @@ pre .javascript .function {
   display: block;
   line-height: 25px;
   font-size: 14px;
-  color: #555;
+  color: $my-link-blue;
   border-bottom: none;
 }
 .post-nav-item a:hover {
-  color: #222;
+  color: $my-link-hover-blue;
   border-bottom: none;
 }
 .post-nav-item a:active {
@@ -1842,7 +1842,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #16c1da;
+  background: #ffc4ff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3002,6 +3002,9 @@ pre .javascript .function {
 }
 .footer {
   bottom: auto;
+}
+blockquote {
+  border-left: 3px solid #87ceeb;
 }
 code {
   color: #fff;
