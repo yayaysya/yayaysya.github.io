@@ -4,11 +4,33 @@
 
     
   <url>
-    <loc>http://linuxcc.top/2017/10/10/CSAPP01/</loc>
-    <lastmod>2017-10-10T07:33:24.270Z</lastmod>
+    <loc>http://linuxcc.top/2017/10/10/CSAPP02/</loc>
+    <lastmod>2017-10-10T09:51:28.495Z</lastmod>
     <data>
         <display>
-        <title><读薄CSAPP学习>一.深入理解计算机系统</title>
+        <title><读薄CSAPP学习>一.数据表示</title>
+        <pubTime>2017-10-10T09:50:00.350Z</pubTime>
+        
+        <tag>CSAPP</tag>
+         
+        <tag>小土刀</tag>
+         
+         
+           
+             
+              <breadCrumb title="CSAPP" url="http://linuxcc.top/categories/CSAPP/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://linuxcc.top/2017/10/10/CSAPP01/</loc>
+    <lastmod>2017-10-10T09:50:17.086Z</lastmod>
+    <data>
+        <display>
+        <title><读薄CSAPP学习>零.深入理解计算机系统</title>
         <pubTime>2017-10-10T07:21:01.264Z</pubTime>
         
         <tag>CSAPP</tag>
