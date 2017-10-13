@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://linuxcc.top/work/index.html</loc>
+    
+    <lastmod>2017-10-13T09:07:30.007Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://linuxcc.top/life/index.html</loc>
+    
+    <lastmod>2017-10-13T09:02:45.560Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://linuxcc.top/2017/10/09/DaliyReport10/</loc>
     
     <lastmod>2017-10-13T02:32:54.229Z</lastmod>
@@ -54,20 +68,6 @@
     <loc>http://linuxcc.top/2017/10/10/CSAPP02/</loc>
     
     <lastmod>2017-10-11T12:39:17.283Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://linuxcc.top/life/index.html</loc>
-    
-    <lastmod>2017-10-11T07:45:32.674Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://linuxcc.top/work/index.html</loc>
-    
-    <lastmod>2017-10-11T07:45:24.471Z</lastmod>
     
   </url>
   
