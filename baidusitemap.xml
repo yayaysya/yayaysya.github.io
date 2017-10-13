@@ -4,22 +4,8 @@
 
     
   <url>
-    <loc>http://linuxcc.top/learning/index.html</loc>
-    <lastmod>2017-10-12T08:53:40.173Z</lastmod>
-    <data>
-        <display>
-        <title>蜀道难-个人学习的技术栈</title>
-        <pubTime>2017-10-10T16:00:00.000Z</pubTime>
-        
-         
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://linuxcc.top/2017/10/09/DaliyReport10/</loc>
-    <lastmod>2017-10-12T03:24:20.872Z</lastmod>
+    <lastmod>2017-10-13T02:32:54.229Z</lastmod>
     <data>
         <display>
         <title>10月日志</title>
@@ -32,6 +18,20 @@
              
               <breadCrumb title="日志" url="http://linuxcc.top/categories/%E6%97%A5%E5%BF%97/"/>
           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://linuxcc.top/learning/index.html</loc>
+    <lastmod>2017-10-12T08:53:40.173Z</lastmod>
+    <data>
+        <display>
+        <title>蜀道难-个人学习的技术栈</title>
+        <pubTime>2017-10-10T16:00:00.000Z</pubTime>
+        
+         
         </display>
     </data>
     </url>
