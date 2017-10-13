@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://linuxcc.top/video/index.html</loc>
+    
+    <lastmod>2017-10-13T09:19:03.482Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://linuxcc.top/work/index.html</loc>
     
     <lastmod>2017-10-13T09:07:30.007Z</lastmod>
@@ -68,13 +75,6 @@
     <loc>http://linuxcc.top/2017/10/10/CSAPP02/</loc>
     
     <lastmod>2017-10-11T12:39:17.283Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://linuxcc.top/video/index.html</loc>
-    
-    <lastmod>2017-10-10T13:13:19.351Z</lastmod>
     
   </url>
   
