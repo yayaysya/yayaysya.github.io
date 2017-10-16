@@ -117,7 +117,7 @@
 <meta property="og:image" content="http://ovlptpuvi.bkt.clouddn.com/blog/171016/57Gki0A3k0.png?imageslim">
 <meta property="og:image" content="http://ovlptpuvi.bkt.clouddn.com/blog/171016/lDeFLddl4C.png?imageslim">
 <meta property="og:image" content="http://ovlptpuvi.bkt.clouddn.com/blog/171016/4GiAbG714k.png?imageslim">
-<meta property="og:updated_time" content="2017-10-16T08:39:28.923Z">
+<meta property="og:updated_time" content="2017-10-16T09:22:12.090Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="&lt;读薄CSAPP学习&gt;二.机器指令与程序优化">
 <meta name="twitter:description" content="这一节涉及到cpu执行代码知识, 简单汇编知识, 以及详细的程序执行过程.另外包括结构体对齐知识, 和缓冲区溢出的相关知识.">
@@ -383,7 +383,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-10-16T16:39:28+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2017-10-16T17:22:12+08:00">
                 2017-10-16
               </time>
             
@@ -493,7 +493,7 @@
 <h2 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h2><p><strong>内存对齐问题</strong><br><strong>对齐原因</strong>:内存访问通常来说是 4 或者 8 个字节位单位的，不对齐的话访问起来效率不高</p>
 <p><strong>对齐准则(两条)</strong>:</p>
 <ol>
-<li>如果数据类型需要 K 个字节，那么地址都必须是 K 的倍数<br><img src="http://ovlptpuvi.bkt.clouddn.com/blog/171016/lBaAJgK176.png?imageslim" alt="mark"><br>所占据的内存空间必须是最大的类型所需字节的倍数</li>
+<li>如果数据类型需要 K 个字节，那么地址都必须是 K 的倍数<br><img src="http://ovlptpuvi.bkt.clouddn.com/blog/171016/lBaAJgK176.png?imageslim" alt="mark"></li>
 <li>对于一个结构体来说，所占据的内存空间必须是最大的类型所需字节的倍数<br><img src="http://ovlptpuvi.bkt.clouddn.com/blog/171016/57Gki0A3k0.png?imageslim" alt="mark"></li>
 </ol>
 <h1 id="缓冲区溢出"><a href="#缓冲区溢出" class="headerlink" title="缓冲区溢出"></a>缓冲区溢出</h1><p><img src="http://ovlptpuvi.bkt.clouddn.com/blog/171016/lDeFLddl4C.png?imageslim" alt="mark"><br>栈在最上面，也就是说，栈再往上就是另一个程序的内存范围了，这种时候我们就可以通过这种方式修改内存的其他部分了。</p>
