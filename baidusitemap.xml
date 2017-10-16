@@ -3,12 +3,9 @@
 
 
     
-    
-    
-    
   <url>
     <loc>http://linuxcc.top/2017/10/09/DaliyReport10/</loc>
-    <lastmod>2017-10-13T02:32:54.229Z</lastmod>
+    <lastmod>2017-10-16T08:41:29.312Z</lastmod>
     <data>
         <display>
         <title>10月日志</title>
@@ -25,6 +22,31 @@
     </data>
     </url>
 
+    
+  <url>
+    <loc>http://linuxcc.top/2017/10/16/CSAPP03/</loc>
+    <lastmod>2017-10-16T08:39:28.923Z</lastmod>
+    <data>
+        <display>
+        <title><读薄CSAPP学习>二.机器指令与程序优化</title>
+        <pubTime>2017-10-16T08:39:20.798Z</pubTime>
+        
+        <tag>CSAPP</tag>
+         
+        <tag>小土刀</tag>
+         
+         
+           
+             
+              <breadCrumb title="CSAPP" url="http://linuxcc.top/categories/CSAPP/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+    
     
   <url>
     <loc>http://linuxcc.top/learning/index.html</loc>
