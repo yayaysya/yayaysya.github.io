@@ -4,28 +4,8 @@
 
     
   <url>
-    <loc>http://linuxcc.top/2017/10/09/DaliyReport10/</loc>
-    <lastmod>2017-10-17T05:41:57.061Z</lastmod>
-    <data>
-        <display>
-        <title>10月日志</title>
-        <pubTime>2017-10-09T10:28:19.374Z</pubTime>
-        
-        <tag>日志</tag>
-         
-         
-           
-             
-              <breadCrumb title="日志" url="http://linuxcc.top/categories/%E6%97%A5%E5%BF%97/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://linuxcc.top/2017/10/17/CSAPP08/</loc>
-    <lastmod>2017-10-17T05:39:30.027Z</lastmod>
+    <lastmod>2017-10-17T05:57:26.403Z</lastmod>
     <data>
         <display>
         <title><读薄CSAPP学习>七.虚拟内存与动态内存分配</title>
@@ -39,6 +19,40 @@
            
              
               <breadCrumb title="CSAPP" url="http://linuxcc.top/categories/CSAPP/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://linuxcc.top/learning/index.html</loc>
+    <lastmod>2017-10-17T05:46:36.618Z</lastmod>
+    <data>
+        <display>
+        <title>蜀道难-个人学习的技术栈</title>
+        <pubTime>2017-10-10T16:00:00.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://linuxcc.top/2017/10/09/DaliyReport10/</loc>
+    <lastmod>2017-10-17T05:41:57.061Z</lastmod>
+    <data>
+        <display>
+        <title>10月日志</title>
+        <pubTime>2017-10-09T10:28:19.374Z</pubTime>
+        
+        <tag>日志</tag>
+         
+         
+           
+             
+              <breadCrumb title="日志" url="http://linuxcc.top/categories/%E6%97%A5%E5%BF%97/"/>
           
         </display>
     </data>
@@ -69,20 +83,6 @@
     
     
     
-    
-  <url>
-    <loc>http://linuxcc.top/learning/index.html</loc>
-    <lastmod>2017-10-12T08:53:40.173Z</lastmod>
-    <data>
-        <display>
-        <title>蜀道难-个人学习的技术栈</title>
-        <pubTime>2017-10-10T16:00:00.000Z</pubTime>
-        
-         
-        </display>
-    </data>
-    </url>
-
     
   <url>
     <loc>http://linuxcc.top/2017/09/30/NextMeihua/</loc>
