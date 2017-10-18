@@ -102,13 +102,13 @@
 
 
 
-<meta name="description" content="这一节主要涉及的概念是进程和信号;异常部分自己之后再去补充">
+<meta name="description" content="这一节主要涉及的概念是进程和信号;后期还需要补充: 进程同步相关知识; 异常处理相关知识">
 <meta name="keywords" content="CSAPP,小土刀">
 <meta property="og:type" content="article">
 <meta property="og:title" content="&lt;读薄CSAPP学习&gt;五.异常控制流">
 <meta property="og:url" content="http://linuxcc.top/2017/10/18/CSAPP06/index.html">
 <meta property="og:site_name" content="暗夜精淋&#39;s Blog">
-<meta property="og:description" content="这一节主要涉及的概念是进程和信号;异常部分自己之后再去补充">
+<meta property="og:description" content="这一节主要涉及的概念是进程和信号;后期还需要补充: 进程同步相关知识; 异常处理相关知识">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://ovlptpuvi.bkt.clouddn.com/blog/171017/0I14abJJ2B.png?imageslim">
 <meta property="og:image" content="http://ovlptpuvi.bkt.clouddn.com/blog/171017/Egd8F1BefC.png?imageslim">
@@ -116,10 +116,10 @@
 <meta property="og:image" content="http://ovlptpuvi.bkt.clouddn.com/blog/171017/C7Ih64H56E.png?imageslim">
 <meta property="og:image" content="http://ovlptpuvi.bkt.clouddn.com/blog/171017/b8fmC9e8kC.png?imageslim">
 <meta property="og:image" content="http://ovlptpuvi.bkt.clouddn.com/blog/171017/AbCmBdcFB7.png?imageslim">
-<meta property="og:updated_time" content="2017-10-18T07:42:00.611Z">
+<meta property="og:updated_time" content="2017-10-18T09:37:25.220Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="&lt;读薄CSAPP学习&gt;五.异常控制流">
-<meta name="twitter:description" content="这一节主要涉及的概念是进程和信号;异常部分自己之后再去补充">
+<meta name="twitter:description" content="这一节主要涉及的概念是进程和信号;后期还需要补充: 进程同步相关知识; 异常处理相关知识">
 <meta name="twitter:image" content="http://ovlptpuvi.bkt.clouddn.com/blog/171017/0I14abJJ2B.png?imageslim">
 
 
@@ -382,7 +382,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-10-18T15:42:00+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2017-10-18T17:37:25+08:00">
                 2017-10-18
               </time>
             
@@ -438,7 +438,7 @@
       
 
       
-        <p>这一节主要涉及的概念是进程和信号;<br>异常部分自己之后再去补充</p>
+        <p>这一节主要涉及的概念是进程和信号;<br>后期还需要补充: 进程同步相关知识; 异常处理相关知识</p>
 <a id="more"></a> 
 <hr>
 <p><span id="inline-purple">更新记录</span></p>
@@ -474,12 +474,12 @@
 </blockquote>
 <h2 id="内核对切换进程进行调度"><a href="#内核对切换进程进行调度" class="headerlink" title="内核对切换进程进行调度"></a>内核对切换进程进行调度</h2><p><img src="http://ovlptpuvi.bkt.clouddn.com/blog/171017/Egd8F1BefC.png?imageslim" alt="mark"></p>
 <h1 id="Linux进程控制"><a href="#Linux进程控制" class="headerlink" title="Linux进程控制"></a>Linux进程控制</h1><h2 id="系统调用的错误处理"><a href="#系统调用的错误处理" class="headerlink" title="系统调用的错误处理"></a>系统调用的错误处理</h2><p>在遇到错误的时候，Linux 系统级函数通常会返回 -1 并且设置 <code>errno</code> 这个全局变量来表示错误的原因。</p>
-<p><strong>两个规则：</strong></p>
+<p>###　两个规则：</p>
 <ul>
 <li>对于每个<code>系统调用</code>都应该检查返回值</li>
 <li>当然有一些系统调用的返回值为void，在这里就不适用</li>
 </ul>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//调用系统函数fork()</span></div><div class="line"><span class="keyword">if</span> ((pid = fork()) &lt; <span class="number">0</span>) </div><div class="line">&#123;</div><div class="line">    <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"fork error: %s\n"</span>, strerror(errno));</div><div class="line">    <span class="built_in">exit</span>(<span class="number">0</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//调用系统函数fork()</span></div><div class="line"><span class="keyword">if</span> ((pid = fork()) &lt; <span class="number">0</span>) </div><div class="line">&#123;</div><div class="line">    <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"fork error: %s\n"</span>, strerror(errno));</div><div class="line">    <span class="built_in">exit</span>(<span class="number">0</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>也可以利用辅助函数<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 上面的片段可以写为</span></div><div class="line"><span class="keyword">if</span> ((pid = fork()) &lt; <span class="number">0</span>)</div><div class="line">    unix_error(<span class="string">"fork error"</span>)</div></pre></td></tr></table></figure></p>
 <h2 id="获取进程信息"><a href="#获取进程信息" class="headerlink" title="获取进程信息"></a>获取进程信息</h2><p><strong>获取函数</strong></p>
 <ul>
@@ -501,18 +501,17 @@
 <p>exit函数函数原型<br>void exit(int status); //status: 0表示正常结束, 非零表示出现错误结束</p>
 </blockquote>
 <h2 id="创建子进程-fork"><a href="#创建子进程-fork" class="headerlink" title="创建子进程(fork)"></a>创建子进程(fork)</h2><p>fork函数原型<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">fork</span><span class="params">(<span class="keyword">void</span>)</span></span>;</div></pre></td></tr></table></figure></p>
-<p><strong>特点</strong></p>
+<p>###　特点</p>
 <ul>
 <li>子进程会有相同且独立的虚拟地址空间</li>
 <li>子进程会得到父进程已经打开的文件描述符</li>
 <li>子进程的进程号与父进程不同</li>
 </ul>
-<p><strong>注意</strong></p>
-<ul>
+<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><ul>
 <li>并行执行, 所以子进程与父进程没有执行顺序的差别</li>
 <li>拥有独立到的地址空间</li>
 <li>父进程与子进程的<code>stdout</code>都会发送到标准输出</li>
-<li>一般用fork函数的返回值来区分<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">pid = Fork();</div><div class="line">if (pid == 0)</div><div class="line">&#123; // Child</div><div class="line">printf(&quot;I&apos;m the child!\n&quot;);</div><div class="line">exit(0);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<li>一般用fork函数的返回值来区分<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">pid = Fork();</div><div class="line"><span class="keyword">if</span> (pid == <span class="number">0</span>)</div><div class="line">&#123;   </div><div class="line">    <span class="comment">// Child</span></div><div class="line">    <span class="built_in">printf</span>(<span class="string">"I'm the child!\n"</span>);</div><div class="line">    <span class="built_in">exit</span>(<span class="number">0</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <h2 id="回收子进程"><a href="#回收子进程" class="headerlink" title="回收子进程"></a>回收子进程</h2><p><strong>僵尸进程</strong>:主进程已经终止, 子进程还在消耗资源, 这种子进程称之为僵尸进程</p>
@@ -539,12 +538,11 @@
 <li>信号的类型由1-30的整数定义</li>
 </ul>
 <h2 id="使用的具体场景"><a href="#使用的具体场景" class="headerlink" title="使用的具体场景"></a>使用的具体场景</h2><p><img src="http://ovlptpuvi.bkt.clouddn.com/blog/171017/C7Ih64H56E.png?imageslim" alt="mark"></p>
-<p><strong>内核发送信号给进程</strong></p>
-<ul>
+<h3 id="内核发送信号给进程"><a href="#内核发送信号给进程" class="headerlink" title="内核发送信号给进程"></a>内核发送信号给进程</h3><ul>
 <li>内核检测到了除零操作(SIGFPE)或者子进程终止(SIGCHLD)的系统事件</li>
 <li>另一个进程调用了<code>kill</code>命令来请求内核发送信号给指定的进程</li>
 </ul>
-<p><strong>接收后的操作</strong><br>目标进程接收到信号, 内核会强制要求进程对于信号做出相应, 可以有几种不同的操作:</p>
+<h3 id="接收后的操作"><a href="#接收后的操作" class="headerlink" title="接收后的操作"></a>接收后的操作</h3><p>目标进程接收到信号, 内核会强制要求进程对于信号做出相应, 可以有几种不同的操作:</p>
 <ul>
 <li>忽略这个信号</li>
 <li>终止进程</li>
@@ -555,19 +553,18 @@
 </blockquote>
 <h1 id="进程组"><a href="#进程组" class="headerlink" title="进程组"></a>进程组</h1><p>每个进程都只属于一个进程组</p>
 <h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><ul>
-<li>getpgrp() 返回当前进程的进程组 (get ps group)</li>
-<li>setpgid() 设置一个进程的进程组  (set ps group id)</li>
+<li><code>getpgrp()</code> 返回当前进程的进程组 (get ps group)</li>
+<li><code>setpgid()</code> 设置一个进程的进程组  (set ps group id)</li>
 </ul>
-<p>##　使用</p>
-<ul>
+<h2 id="使用-1"><a href="#使用-1" class="headerlink" title="使用"></a>使用</h2><ul>
 <li>关闭进程组, 会关闭该进程组中所有的进程</li>
-<li>ctrl+c 发送SIGINT信号, 默认终止进程; ctrl_z发送SIGTSTP信号, 默认挂起进程</li>
+<li><code>ctrl+c</code> 发送<code>SIGINT</code>信号, 默认<code>终止进程</code>; <code>ctrl_z</code>发送<code>SIGTSTP</code>信号, 默认<code>挂起进程</code></li>
 </ul>
 <p><strong>ps命令STAT含义</strong></p>
 <blockquote>
 <p><strong>第一个字母</strong><br>S: 睡眠 sleeping<br>T: 停止 stopped<br>R: 运行 running<br><strong>第二个字母</strong><br>s: 会话管理者 session leader<br>+: 前台进程组</p>
 </blockquote>
-<p><strong>进程利用kill发送信号的典型例子</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">void forkandkill()</div><div class="line">&#123;</div><div class="line">    pid_t pid[N];</div><div class="line">    int i;</div><div class="line">    int child_status;</div><div class="line">    for (i = 0; i &lt; N; i++)</div><div class="line">        if ((pid[i] = fork()) == 0)</div><div class="line">            while(1) ; // 死循环</div><div class="line">    for (i = 0; i &lt; N; i++)</div><div class="line">    &#123;</div><div class="line">        printf(&quot;Killing process %d\n&quot;, pid[i]);</div><div class="line">        kill(pid[i], SIGINT);</div><div class="line">    &#125;</div><div class="line">    for (i = 0; i &lt; N; i++)</div><div class="line">    &#123;</div><div class="line">        pid_t wpid = wait(&amp;child_status);</div><div class="line">        if (WIFEXITED(child_status))</div><div class="line">            printf(&quot;Child %d terminated with exit status %d\n&quot;,</div><div class="line">                    wpid, WEXITSTATUS(child_status));</div><div class="line">        else</div><div class="line">            printf(&quot;Child %d terminated abnormally\n&quot;, wpid);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><strong>进程利用kill发送信号的典型例子</strong><br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">forkandkill</span><span class="params">()</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    <span class="keyword">pid_t</span> pid[N];</div><div class="line">    <span class="keyword">int</span> i;</div><div class="line">    <span class="keyword">int</span> child_status;</div><div class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; N; i++)</div><div class="line">        <span class="keyword">if</span> ((pid[i] = fork()) == <span class="number">0</span>)</div><div class="line">            <span class="keyword">while</span>(<span class="number">1</span>) ; <span class="comment">// 死循环</span></div><div class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; N; i++)</div><div class="line">    &#123;</div><div class="line">        <span class="built_in">printf</span>(<span class="string">"Killing process %d\n"</span>, pid[i]);</div><div class="line">        kill(pid[i], SIGINT);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; N; i++)</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">pid_t</span> wpid = wait(&amp;child_status);</div><div class="line">        <span class="keyword">if</span> (WIFEXITED(child_status))</div><div class="line">            <span class="built_in">printf</span>(<span class="string">"Child %d terminated with exit status %d\n"</span>,</div><div class="line">                    wpid, WEXITSTATUS(child_status));</div><div class="line">        <span class="keyword">else</span></div><div class="line">            <span class="built_in">printf</span>(<span class="string">"Child %d terminated abnormally\n"</span>, wpid);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <h1 id="接收信号"><a href="#接收信号" class="headerlink" title="接收信号"></a>接收信号</h1><h2 id="默认动作"><a href="#默认动作" class="headerlink" title="默认动作"></a>默认动作</h2><p>每个信号都有一个预定义的<code>默认动作</code></p>
 <ul>
 <li>终止进程</li>
@@ -575,18 +572,17 @@
 <li>停止进程，收到 SIGCONT 信号之后重启</li>
 <li>忽略信号</li>
 </ul>
-<p><strong>修改默认动作-signal函数</strong><br>函数原型<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">handler_t *signal(int signum, handler_t *handler)</div></pre></td></tr></table></figure></p>
-<p>添加signal(SIGINT, …)即使按下ctrl+c也不会造成程序的终止<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    // 设定 SIGINT 处理器</div><div class="line">    if (signal(SIGINT, sigint_handler) == SIG_ERR)</div><div class="line">        unix_error(&quot;signal error&quot;);</div><div class="line">    // 等待接收信号</div><div class="line">    pause();</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="修改默认动作-signal函数"><a href="#修改默认动作-signal函数" class="headerlink" title="修改默认动作-signal函数"></a>修改默认动作-signal函数</h2><p>函数原型<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">handler_t</span> *signal(<span class="keyword">int</span> signum, <span class="keyword">handler_t</span> *handler)</div></pre></td></tr></table></figure></p>
+<p>添加signal(SIGINT, …)即使按下ctrl+c也不会造成程序的终止<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    <span class="comment">// 设定 SIGINT 处理器</span></div><div class="line">    <span class="keyword">if</span> (signal(SIGINT, sigint_handler) == SIG_ERR)</div><div class="line">        unix_error(<span class="string">"signal error"</span>);</div><div class="line">    <span class="comment">// 等待接收信号</span></div><div class="line">    pause();</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <h2 id="信号处理器被其他信号中断"><a href="#信号处理器被其他信号中断" class="headerlink" title="信号处理器被其他信号中断"></a>信号处理器被其他信号中断</h2><p><img src="http://ovlptpuvi.bkt.clouddn.com/blog/171017/b8fmC9e8kC.png?imageslim" alt="mark"></p>
 <h2 id="阻塞信号"><a href="#阻塞信号" class="headerlink" title="阻塞信号"></a>阻塞信号</h2><p>被阻塞的信号产生时将保持在未决状态，直到进程解除对此信号的阻塞，才执行递达的动作</p>
-<p><strong>阻塞和忽略的区别</strong><br>只要信号被阻塞就不会递达, 此时信号处于<code>未决状态</code>; 而<code>忽略</code>是在<code>递达</code>之后可选的一种<code>处理动作</code></p>
-<p><strong>信号传递的状态</strong></p>
-<ul>
+<h3 id="阻塞和忽略的区别"><a href="#阻塞和忽略的区别" class="headerlink" title="阻塞和忽略的区别"></a>阻塞和忽略的区别</h3><p>只要信号被阻塞就不会递达, 此时信号处于<code>未决状态</code>; 而<code>忽略</code>是在<code>递达</code>之后可选的一种<code>处理动作</code></p>
+<h3 id="信号传递的状态"><a href="#信号传递的状态" class="headerlink" title="信号传递的状态"></a>信号传递的状态</h3><ul>
 <li>产生(Generation)</li>
 <li>未决(Pending):  信号从产生到递达之间的状态</li>
 <li>递达(Delivery):  实际执行信号的处理动作称为信号递达</li>
 </ul>
-<p>如果想显示阻塞信号, 就要用到<code>信号集操作函数</code></p>
+<h3 id="显示地阻塞信号"><a href="#显示地阻塞信号" class="headerlink" title="显示地阻塞信号"></a>显示地阻塞信号</h3><p>如果想显示阻塞信号, 就要用到<code>信号集操作函数</code></p>
 <ul>
 <li>sigemptyset - 创建空集</li>
 <li>sigfillset - 把所有的信号都添加到集合中（因为信号数目不多）</li>
@@ -594,7 +590,7 @@
 <li>sigdelset - 删除集合中的指定信号</li>
 <li>sigprocmask -改变信号的阻塞状态(设置阻塞/取消阻塞)</li>
 </ul>
-<p>例子<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">sigset_t mask, prev_mask;</div><div class="line">Sigemptyset(&amp;mask); // 创建空集</div><div class="line">Sigaddset(&amp;mask, SIGINT); // 把 SIGINT 信号加入屏蔽列表中</div><div class="line">// 阻塞对应信号，并保存之前的集合作为备份</div><div class="line">Sigprocmask(SIG_BLOCK, &amp;mask, &amp;prev_mask);</div><div class="line">...</div><div class="line">... // 这部分代码不会被 SIGINT 中断</div><div class="line">...</div><div class="line">// 取消阻塞信号，恢复原来的状态</div><div class="line">Sigprocmask(SIG_SETMASK, &amp;prev_mask, NULL);</div></pre></td></tr></table></figure></p>
+<p>例子<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">sigset_t</span> mask, prev_mask;</div><div class="line">Sigemptyset(&amp;mask); <span class="comment">// 创建空集</span></div><div class="line">Sigaddset(&amp;mask, SIGINT); <span class="comment">// 把 SIGINT 信号加入屏蔽列表中</span></div><div class="line"><span class="comment">// 阻塞对应信号，并保存之前的集合作为备份</span></div><div class="line">Sigprocmask(SIG_BLOCK, &amp;mask, &amp;prev_mask);</div><div class="line">...</div><div class="line">... <span class="comment">// 这部分代码不会被 SIGINT 中断</span></div><div class="line">...</div><div class="line"><span class="comment">// 取消阻塞信号，恢复原来的状态</span></div><div class="line">Sigprocmask(SIG_SETMASK, &amp;prev_mask, <span class="literal">NULL</span>);</div></pre></td></tr></table></figure></p>
 <h1 id="非本地跳转的概念和意义"><a href="#非本地跳转的概念和意义" class="headerlink" title="非本地跳转的概念和意义"></a>非本地跳转的概念和意义</h1><p><strong>本地跳转</strong><br>goto语句的流程跳转, 都是在一个函数内的跳转<br><strong>非本地跳转</strong><br><code>setjmp</code>和<code>longjmp</code>配合的跳转, 可以从一个函数跳转到另一个函数</p>
 <blockquote>
 <p><code>setjmp</code>的含义类似: 设置调回点<br><code>longjmp</code>的含义: 跳转到调回点</p>
@@ -644,6 +640,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/18/LinuxQianTai/" rel="prev" title="<linux系统挖掘机>linux前台进程与后台进程">
+                <linux系统挖掘机>linux前台进程与后台进程 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -725,7 +725,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -747,7 +747,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -817,7 +817,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#本节可以学到"><span class="nav-number">1.</span> <span class="nav-text">本节可以学到</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#异常控制流"><span class="nav-number">2.</span> <span class="nav-text">异常控制流</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#进程"><span class="nav-number">3.</span> <span class="nav-text">进程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#进程切换"><span class="nav-number">4.</span> <span class="nav-text">进程切换</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#进程在内存中的分布"><span class="nav-number">4.1.</span> <span class="nav-text">进程在内存中的分布</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内核对切换进程进行调度"><span class="nav-number">4.2.</span> <span class="nav-text">内核对切换进程进行调度</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux进程控制"><span class="nav-number">5.</span> <span class="nav-text">Linux进程控制</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#系统调用的错误处理"><span class="nav-number">5.1.</span> <span class="nav-text">系统调用的错误处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获取进程信息"><span class="nav-number">5.2.</span> <span class="nav-text">获取进程信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进程的状态"><span class="nav-number">5.3.</span> <span class="nav-text">进程的状态</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#终止Terminated"><span class="nav-number">5.3.1.</span> <span class="nav-text">终止Terminated</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建子进程-fork"><span class="nav-number">5.4.</span> <span class="nav-text">创建子进程(fork)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#回收子进程"><span class="nav-number">5.5.</span> <span class="nav-text">回收子进程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#回收方法"><span class="nav-number">5.5.1.</span> <span class="nav-text">回收方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进程树"><span class="nav-number">5.6.</span> <span class="nav-text">进程树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#前台进程与后台进程"><span class="nav-number">5.7.</span> <span class="nav-text">前台进程与后台进程</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#信号"><span class="nav-number">6.</span> <span class="nav-text">信号</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#信号的作用"><span class="nav-number">6.1.</span> <span class="nav-text">信号的作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进程接收到信号后"><span class="nav-number">6.2.</span> <span class="nav-text">进程接收到信号后</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进程的特点"><span class="nav-number">6.3.</span> <span class="nav-text">进程的特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用的具体场景"><span class="nav-number">6.4.</span> <span class="nav-text">使用的具体场景</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#进程组"><span class="nav-number">7.</span> <span class="nav-text">进程组</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#函数"><span class="nav-number">7.1.</span> <span class="nav-text">函数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#接收信号"><span class="nav-number">8.</span> <span class="nav-text">接收信号</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#默认动作"><span class="nav-number">8.1.</span> <span class="nav-text">默认动作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#信号处理器被其他信号中断"><span class="nav-number">8.2.</span> <span class="nav-text">信号处理器被其他信号中断</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#阻塞信号"><span class="nav-number">8.3.</span> <span class="nav-text">阻塞信号</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#非本地跳转的概念和意义"><span class="nav-number">9.</span> <span class="nav-text">非本地跳转的概念和意义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他知识"><span class="nav-number">10.</span> <span class="nav-text">其他知识</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#并发与并行"><span class="nav-number">10.1.</span> <span class="nav-text">并发与并行</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考链接"><span class="nav-number">11.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#本节可以学到"><span class="nav-number">1.</span> <span class="nav-text">本节可以学到</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#异常控制流"><span class="nav-number">2.</span> <span class="nav-text">异常控制流</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#进程"><span class="nav-number">3.</span> <span class="nav-text">进程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#进程切换"><span class="nav-number">4.</span> <span class="nav-text">进程切换</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#进程在内存中的分布"><span class="nav-number">4.1.</span> <span class="nav-text">进程在内存中的分布</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内核对切换进程进行调度"><span class="nav-number">4.2.</span> <span class="nav-text">内核对切换进程进行调度</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux进程控制"><span class="nav-number">5.</span> <span class="nav-text">Linux进程控制</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#系统调用的错误处理"><span class="nav-number">5.1.</span> <span class="nav-text">系统调用的错误处理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用"><span class="nav-number">5.1.1.</span> <span class="nav-text">使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获取进程信息"><span class="nav-number">5.2.</span> <span class="nav-text">获取进程信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进程的状态"><span class="nav-number">5.3.</span> <span class="nav-text">进程的状态</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#终止Terminated"><span class="nav-number">5.3.1.</span> <span class="nav-text">终止Terminated</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建子进程-fork"><span class="nav-number">5.4.</span> <span class="nav-text">创建子进程(fork)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#注意"><span class="nav-number">5.4.1.</span> <span class="nav-text">注意</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#回收子进程"><span class="nav-number">5.5.</span> <span class="nav-text">回收子进程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#回收方法"><span class="nav-number">5.5.1.</span> <span class="nav-text">回收方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进程树"><span class="nav-number">5.6.</span> <span class="nav-text">进程树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#前台进程与后台进程"><span class="nav-number">5.7.</span> <span class="nav-text">前台进程与后台进程</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#信号"><span class="nav-number">6.</span> <span class="nav-text">信号</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#信号的作用"><span class="nav-number">6.1.</span> <span class="nav-text">信号的作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进程接收到信号后"><span class="nav-number">6.2.</span> <span class="nav-text">进程接收到信号后</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进程的特点"><span class="nav-number">6.3.</span> <span class="nav-text">进程的特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用的具体场景"><span class="nav-number">6.4.</span> <span class="nav-text">使用的具体场景</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内核发送信号给进程"><span class="nav-number">6.4.1.</span> <span class="nav-text">内核发送信号给进程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#接收后的操作"><span class="nav-number">6.4.2.</span> <span class="nav-text">接收后的操作</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#进程组"><span class="nav-number">7.</span> <span class="nav-text">进程组</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#函数"><span class="nav-number">7.1.</span> <span class="nav-text">函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-1"><span class="nav-number">7.2.</span> <span class="nav-text">使用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#接收信号"><span class="nav-number">8.</span> <span class="nav-text">接收信号</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#默认动作"><span class="nav-number">8.1.</span> <span class="nav-text">默认动作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改默认动作-signal函数"><span class="nav-number">8.2.</span> <span class="nav-text">修改默认动作-signal函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#信号处理器被其他信号中断"><span class="nav-number">8.3.</span> <span class="nav-text">信号处理器被其他信号中断</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#阻塞信号"><span class="nav-number">8.4.</span> <span class="nav-text">阻塞信号</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#阻塞和忽略的区别"><span class="nav-number">8.4.1.</span> <span class="nav-text">阻塞和忽略的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#信号传递的状态"><span class="nav-number">8.4.2.</span> <span class="nav-text">信号传递的状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#显示地阻塞信号"><span class="nav-number">8.4.3.</span> <span class="nav-text">显示地阻塞信号</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#非本地跳转的概念和意义"><span class="nav-number">9.</span> <span class="nav-text">非本地跳转的概念和意义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他知识"><span class="nav-number">10.</span> <span class="nav-text">其他知识</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#并发与并行"><span class="nav-number">10.1.</span> <span class="nav-text">并发与并行</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考链接"><span class="nav-number">11.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
             
 
           </div>

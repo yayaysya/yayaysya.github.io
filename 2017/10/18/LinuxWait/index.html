@@ -86,7 +86,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="图床," />
+  <meta name="keywords" content="进程,后台进程," />
 
 
 
@@ -102,27 +102,18 @@
 
 
 
-<meta name="description" content="新建立的博客, 之后可能文章会比较多, 所以如果把图片全部放到vps中, 那么可能访问速度会比较慢.所以考虑图床服务, 大家都在用七牛云, 于是就拿它来试试">
-<meta name="keywords" content="图床">
+<meta name="description" content="本节可以学到:   wait与waitpid()的使用">
+<meta name="keywords" content="进程,后台进程">
 <meta property="og:type" content="article">
-<meta property="og:title" content="图床服务">
-<meta property="og:url" content="http://linuxcc.top/2017/09/01/tuchuang/index.html">
+<meta property="og:title" content="&lt;linux系统挖掘机&gt; wait与waitpid()">
+<meta property="og:url" content="http://linuxcc.top/2017/10/18/LinuxWait/index.html">
 <meta property="og:site_name" content="暗夜精淋&#39;s Blog">
-<meta property="og:description" content="新建立的博客, 之后可能文章会比较多, 所以如果把图片全部放到vps中, 那么可能访问速度会比较慢.所以考虑图床服务, 大家都在用七牛云, 于是就拿它来试试">
+<meta property="og:description" content="本节可以学到:   wait与waitpid()的使用">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://ovlptpuvi.bkt.clouddn.com/blog/170901/eld42ce4aG.png?imageslim">
-<meta property="og:image" content="http://ovlptpuvi.bkt.clouddn.com/blog/170901/a4LAK30A62.png?imageslim">
-<meta property="og:image" content="http://ovlptpuvi.bkt.clouddn.com/blog/170901/LEl82D0jfc.png?imageslim">
-<meta property="og:image" content="http://ovlptpuvi.bkt.clouddn.com/blog/170901/B749iBGmDD.png?imageslim">
-<meta property="og:image" content="http://ovlptpuvi.bkt.clouddn.com/blog/170901/dgfChI1622.png?imageslim">
-<meta property="og:image" content="http://ovlptpuvi.bkt.clouddn.com/blog/170901/LKe88JGk8H.png?imageslim">
-<meta property="og:image" content="http://ovlptpuvi.bkt.clouddn.com/blog/170901/7KAadBIBLA.png?imageslim">
-<meta property="og:image" content="http://ovlptpuvi.bkt.clouddn.com/blog/170901/GfClmmam8L.jpg?imageslim">
-<meta property="og:updated_time" content="2017-10-11T12:40:54.129Z">
+<meta property="og:updated_time" content="2017-10-18T09:36:58.300Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="图床服务">
-<meta name="twitter:description" content="新建立的博客, 之后可能文章会比较多, 所以如果把图片全部放到vps中, 那么可能访问速度会比较慢.所以考虑图床服务, 大家都在用七牛云, 于是就拿它来试试">
-<meta name="twitter:image" content="http://ovlptpuvi.bkt.clouddn.com/blog/170901/eld42ce4aG.png?imageslim">
+<meta name="twitter:title" content="&lt;linux系统挖掘机&gt; wait与waitpid()">
+<meta name="twitter:description" content="本节可以学到:   wait与waitpid()的使用">
 
 
 
@@ -152,13 +143,13 @@
 
 
 
-  <link rel="canonical" href="http://linuxcc.top/2017/09/01/tuchuang/"/>
+  <link rel="canonical" href="http://linuxcc.top/2017/10/18/LinuxWait/"/>
 
 
 
 
 
-  <title>图床服务 | 暗夜精淋's Blog</title>
+  <title><linux系统挖掘机> wait与waitpid() | 暗夜精淋's Blog</title>
   
 
 
@@ -339,7 +330,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://linuxcc.top/2017/09/01/tuchuang/">
+    <link itemprop="mainEntityOfPage" href="http://linuxcc.top/2017/10/18/LinuxWait/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="暗夜精淋">
@@ -356,7 +347,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">图床服务</h1>
+          <h1 class="post-title" itemprop="name headline"><linux系统挖掘机> wait与waitpid()</h1>
         
 
         <div class="post-meta">
@@ -368,8 +359,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-01T21:18:55+08:00">
-                2017-09-01
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-18T17:36:50+08:00">
+                2017-10-18
               </time>
             
 
@@ -384,8 +375,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-10-11T20:40:54+08:00">
-                2017-10-11
+              <time title="更新于" itemprop="dateModified" datetime="2017-10-18T17:36:58+08:00">
+                2017-10-18
               </time>
             
           </span>
@@ -403,8 +394,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo</span>
+                  <a href="/categories/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">linux</span>
                   </a>
                 </span>
 
@@ -440,21 +431,55 @@
       
 
       
-        <blockquote>
-<p>新建立的博客, 之后可能文章会比较多, 所以如果把图片全部放到vps中, 那么可能访问速度会比较慢.<br>所以考虑图床服务, 大家都在用七牛云, 于是就拿它来试试</p>
-</blockquote>
+        <p>本节可以学到: </p>
+<ul>
+<li>wait与waitpid()的使用</li>
+</ul>
 <a id="more"></a> 
-<h1 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h1><h2 id="注册七牛云账号"><a href="#注册七牛云账号" class="headerlink" title="注册七牛云账号"></a>注册七牛云账号</h2><p>点击这里注册<a href="https://www.qiniu.com" target="_blank" rel="external">七牛云</a><br><img src="http://ovlptpuvi.bkt.clouddn.com/blog/170901/eld42ce4aG.png?imageslim" alt="mark"></p>
-<h2 id="新建对象储存"><a href="#新建对象储存" class="headerlink" title="新建对象储存"></a>新建对象储存</h2><p>1.点击新建对象储存<br><img src="http://ovlptpuvi.bkt.clouddn.com/blog/170901/a4LAK30A62.png?imageslim" alt="mark"><br>起一个存储空间名<br><img src="http://ovlptpuvi.bkt.clouddn.com/blog/170901/LEl82D0jfc.png?imageslim" alt="mark"><br>2.保存空间概览–测试域名<br><img src="http://ovlptpuvi.bkt.clouddn.com/blog/170901/B749iBGmDD.png?imageslim" alt="mark"><br>3.点击个人面板–密钥管理<br><img src="http://ovlptpuvi.bkt.clouddn.com/blog/170901/dgfChI1622.png?imageslim" alt="mark"><br>保存AK 和 SK两个密钥<br><img src="http://ovlptpuvi.bkt.clouddn.com/blog/170901/LKe88JGk8H.png?imageslim" alt="mark"></p>
-<h2 id="在Mpic中填写配置"><a href="#在Mpic中填写配置" class="headerlink" title="在Mpic中填写配置"></a>在Mpic中填写配置</h2><h3 id="下载MPic软件"><a href="#下载MPic软件" class="headerlink" title="下载MPic软件"></a>下载MPic软件</h3><p><a href="http://mpic.lzhaofu.cn/" target="_blank" rel="external">Mpic地址</a></p>
-<h3 id="填写配置"><a href="#填写配置" class="headerlink" title="填写配置"></a>填写配置</h3><p>将之前的保存的AK SK密钥填写进去, 再将保存的测试域名填写进去<br><img src="http://ovlptpuvi.bkt.clouddn.com/blog/170901/7KAadBIBLA.png?imageslim" alt="mark"></p>
-<h1 id="上传测试"><a href="#上传测试" class="headerlink" title="上传测试"></a>上传测试</h1><p><img src="http://ovlptpuvi.bkt.clouddn.com/blog/170901/GfClmmam8L.jpg?imageslim" alt="萌妹子"><br>可以看到, 上传成功了</p>
-<h1 id="遇到的坑"><a href="#遇到的坑" class="headerlink" title="遇到的坑"></a>遇到的坑</h1><ol>
-<li>填写MPic的时候, 域名选择成了https:, 导致图片总是出不来, 后来改成http:再传图片就好了</li>
-</ol>
+<hr>
+<p><span id="inline-purple">更新记录</span></p>
+<ul>
+<li>2017/10/18:写完初稿</li>
+</ul>
+<h1 id="waitpid-函数：中断-结束-进程函数"><a href="#waitpid-函数：中断-结束-进程函数" class="headerlink" title="waitpid()函数：中断(结束)进程函数"></a>waitpid()函数：中断(结束)进程函数</h1><h2 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h2><p>希望知道某一个自己创建的子进程何时结束，从而方便父进程做一些处理动作。</p>
+<h2 id="头文件与函数原型"><a href="#头文件与函数原型" class="headerlink" title="头文件与函数原型"></a>头文件与函数原型</h2><ul>
+<li>头文件:<code>#include &lt;sys/types.h&gt;</code>  <code>#include &lt;sys/wait.h&gt;</code></li>
+<li>定义函数:<code>pid_t waitpid(pid_t pid, int * status, int options);</code></li>
+</ul>
+<h2 id="函数说明"><a href="#函数说明" class="headerlink" title="函数说明"></a>函数说明</h2><ul>
+<li>如果子进程还没有停止运行或结束，则调用waitpid()函数的父进程则会被<code>阻塞</code>，暂停运行.直到<code>有信号来</code>到或<code>子进程结束</code>.</li>
+<li>如果在调用wait()时子进程已经结束, 则wait()会立即返回子进程<code>结束状态值</code>.</li>
+<li>如果没有子进程, 就返回错误</li>
+</ul>
+<h2 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h2><ul>
+<li>子进程的<code>结束状态值</code>会由参数<code>status</code> 返回, 而子进程的<code>进程识别码</code>也会一起返回. 如果不在意结束状态值, 则参数status 可以设成NULL.</li>
+<li><p>参数pid 为欲等待的<code>子进程识别码</code>, 其他数值意义如下：<br>1、<strong>pid&lt;-1</strong> 等待<code>进程组识别码</code>为<code>pid绝对值</code>的任何子进程.<br>2、<strong>pid=-1</strong> 等待任何子进程, 相当于wait().<br>3、<strong>pid=0</strong> 等待<code>进程组识别码</code>与目前进程相同的任何子进程.<br>4、<strong>pid&gt;0</strong> 等待任何<code>子进程识别码</code>为pid 的子进程.</p>
+</li>
+<li><p>参数option 可以为0 或下面的OR 组合：</p>
+</li>
+</ul>
+<p><strong>WNOHANG</strong>：如果没有任何已经结束的子进程则马上返回, 不予以等待.<br><strong>WUNTRACED</strong>：如果子进程进入暂停执行情况则马上返回, 但结束状态不予以理会. 子进程的结束状态返回后存于status, 底下有几个宏可判别结束情况</p>
+<ul>
+<li><strong>WIFEXITED(status)</strong>：如果子进程正常结束则为非0 值.</li>
+<li><strong>WEXITSTATUS(status)</strong>：取得子进程exit()返回的结束代码, 一般会先用WIFEXITED<br>来判断是否正常结束才能使用此宏.</li>
+<li><strong>WIFSIGNALED(status)</strong>：如果子进程是因为信号而结束则此宏值为真</li>
+<li><strong>WTERMSIG(status)</strong>：取得子进程因信号而中止的信号代码, 一般会先用WIFSIGNALED 来判断后才使用此宏.</li>
+<li><strong>WIFSTOPPED(status)</strong>：如果子进程处于暂停执行情况则此宏值为真. 一般只有使用WUNTRACED时才会有此情况.</li>
+<li><strong>WSTOPSIG(status)</strong>：取得引发子进程暂停的信号代码, 一般会先用WIFSTOPPED 来判断后才使用此宏.</li>
+</ul>
+<h2 id="返回值"><a href="#返回值" class="headerlink" title="返回值"></a>返回值</h2><p>如果执行成功则返回子<code>进程识别码(PID)</code>, 如果有错误发生则返回-1. 失败原因存于errno 中.</p>
+<h2 id="wait函数"><a href="#wait函数" class="headerlink" title="wait函数"></a>wait函数</h2><h2 id="头文件与函数原型-1"><a href="#头文件与函数原型-1" class="headerlink" title="头文件与函数原型"></a>头文件与函数原型</h2><ul>
+<li>头文件：<code>#include &lt;sys/types.h&gt;</code>    <code>#include &lt;sys/wait.h&gt;</code></li>
+<li>定义函数：<code>pid_t wait (int * status);</code></li>
+</ul>
+<h2 id="函数说明-1"><a href="#函数说明-1" class="headerlink" title="函数说明"></a>函数说明</h2><p>作用: 相当于pid=-1的waitpid()</p>
+<p>范例<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unistd.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/types.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/wait.h&gt;</span></span></div><div class="line">main()</div><div class="line">&#123;</div><div class="line">    <span class="keyword">pid_t</span> pid;</div><div class="line">    <span class="keyword">int</span> status, i;</div><div class="line">    <span class="keyword">if</span>(fork() == <span class="number">0</span>)</div><div class="line">    &#123;</div><div class="line">        <span class="built_in">printf</span>(<span class="string">"This is the child process. pid =%d\n"</span>, getpid());</div><div class="line">        <span class="built_in">exit</span>(<span class="number">5</span>);</div><div class="line">     &#125;</div><div class="line">    <span class="keyword">else</span></div><div class="line">    &#123;</div><div class="line">        sleep(<span class="number">1</span>);</div><div class="line">        <span class="built_in">printf</span>(<span class="string">"This is the parent process, wait for child...\n"</span>;</div><div class="line">        pid = wait(&amp;status);</div><div class="line">        i = WEXITSTATUS(status);</div><div class="line">        <span class="built_in">printf</span>(<span class="string">"child's pid =%d . exit status=^d\n"</span>, pid, i);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>执行：<br>This is the child process. pid=1501<br>This is the parent process, wait for child…<br>child’s pid =1501, exit status =5</p>
 <h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><ul>
-<li><a href="http://www.jianshu.com/p/97bf7bbb18ee" target="_blank" rel="external">1.在 iPic 中添加七牛云</a></li>
-<li><a href="http://blog.lzhaofu.cn/2016/08/26/%E5%9B%BE%E5%BA%8A%E7%A5%9E%E5%99%A8-Windows%E4%B8%8B%E7%9A%84%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0%E5%B7%A5%E5%85%B7MPic/" target="_blank" rel="external">2. 罗朝福 图床 神器</a></li>
+<li><p><a href="http://blog.csdn.net/roland_sun/article/details/32084825" target="_blank" rel="external">http://blog.csdn.net/roland_sun/article/details/32084825</a></p>
+</li>
+<li><p><a href="http://c.biancheng.net/cpp/html/289.html" target="_blank" rel="external">http://c.biancheng.net/cpp/html/289.html</a></p>
+</li>
 </ul>
 
       
@@ -473,7 +498,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/图床/" rel="tag"><i class="fa fa-tag"></i> 图床</a>
+            <a href="/tags/进程/" rel="tag"><i class="fa fa-tag"></i> 进程</a>
+          
+            <a href="/tags/后台进程/" rel="tag"><i class="fa fa-tag"></i> 后台进程</a>
           
         </div>
       
@@ -486,8 +513,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/01/FirstDay/" rel="next" title="第一篇博客">
-                <i class="fa fa-chevron-left"></i> 第一篇博客
+              <a href="/2017/10/18/LinuxQianTai/" rel="next" title="<linux系统挖掘机>linux前台进程与后台进程">
+                <i class="fa fa-chevron-left"></i> <linux系统挖掘机>linux前台进程与后台进程
               </a>
             
           </div>
@@ -495,10 +522,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/09/04/jianzhanNote1/" rel="prev" title="基于vps和github下的博客建立(TBD)">
-                基于vps和github下的博客建立(TBD) <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -672,7 +695,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#步骤"><span class="nav-number">1.</span> <span class="nav-text">步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#注册七牛云账号"><span class="nav-number">1.1.</span> <span class="nav-text">注册七牛云账号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#新建对象储存"><span class="nav-number">1.2.</span> <span class="nav-text">新建对象储存</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在Mpic中填写配置"><span class="nav-number">1.3.</span> <span class="nav-text">在Mpic中填写配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载MPic软件"><span class="nav-number">1.3.1.</span> <span class="nav-text">下载MPic软件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#填写配置"><span class="nav-number">1.3.2.</span> <span class="nav-text">填写配置</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#上传测试"><span class="nav-number">2.</span> <span class="nav-text">上传测试</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#遇到的坑"><span class="nav-number">3.</span> <span class="nav-text">遇到的坑</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考链接"><span class="nav-number">4.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#waitpid-函数：中断-结束-进程函数"><span class="nav-number">1.</span> <span class="nav-text">waitpid()函数：中断(结束)进程函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用场景"><span class="nav-number">1.1.</span> <span class="nav-text">使用场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#头文件与函数原型"><span class="nav-number">1.2.</span> <span class="nav-text">头文件与函数原型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数说明"><span class="nav-number">1.3.</span> <span class="nav-text">函数说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参数"><span class="nav-number">1.4.</span> <span class="nav-text">参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#返回值"><span class="nav-number">1.5.</span> <span class="nav-text">返回值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#wait函数"><span class="nav-number">1.6.</span> <span class="nav-text">wait函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#头文件与函数原型-1"><span class="nav-number">1.7.</span> <span class="nav-text">头文件与函数原型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数说明-1"><span class="nav-number">1.8.</span> <span class="nav-text">函数说明</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考链接"><span class="nav-number">2.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
             
 
           </div>
