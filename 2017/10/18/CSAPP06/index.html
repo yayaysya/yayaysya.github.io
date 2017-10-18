@@ -112,7 +112,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://ovlptpuvi.bkt.clouddn.com/blog/171017/0I14abJJ2B.png?imageslim">
 <meta property="og:image" content="http://ovlptpuvi.bkt.clouddn.com/blog/171017/Egd8F1BefC.png?imageslim">
-<meta property="og:updated_time" content="2017-10-18T06:40:59.551Z">
+<meta property="og:updated_time" content="2017-10-18T06:54:16.134Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="&lt;读薄CSAPP学习&gt;五.异常控制流">
 <meta name="twitter:description" content="这一节主要涉及的概念是进程和信号;异常部分自己之后再去补充">
@@ -378,7 +378,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-10-18T14:40:59+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2017-10-18T14:54:16+08:00">
                 2017-10-18
               </time>
             
@@ -449,7 +449,7 @@
 <li>内存使用中常见的错误</li>
 </ul>
 <h1 id="异常控制流"><a href="#异常控制流" class="headerlink" title="异常控制流"></a>异常控制流</h1><p><span id="inline-purple">TBD</span></p>
-<h1 id="进程概念"><a href="#进程概念" class="headerlink" title="进程概念"></a>进程概念</h1><p>需要了解进程的工作机制</p>
+<h1 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h1><p>需要了解进程的工作机制</p>
 <p><strong>两个机制:</strong></p>
 <ul>
 <li>逻辑控制流: 通过<code>上下文切换</code>的内核机制来让每个程序都感觉自己在<code>独占处理器</code></li>
@@ -457,10 +457,10 @@
 </ul>
 <p><strong>常用命令:</strong> <code>top</code> / <code>htop</code></p>
 <p><strong>pcb进程控制块</strong></p>
-<h1 id="进程切换"><a href="#进程切换" class="headerlink" title="进程切换"></a>进程切换</h1><blockquote>
+<h2 id="进程切换"><a href="#进程切换" class="headerlink" title="进程切换"></a>进程切换</h2><blockquote>
 <p><code>内核</code>通过<code>上下文切换</code>的方式让多个进程同时工作</p>
 </blockquote>
-<p><strong>进程在内存中的分布</strong><br><img src="http://ovlptpuvi.bkt.clouddn.com/blog/171017/0I14abJJ2B.png?imageslim" alt="mark"></p>
+<h3 id="进程在内存中的分布"><a href="#进程在内存中的分布" class="headerlink" title="进程在内存中的分布"></a>进程在内存中的分布</h3><p><img src="http://ovlptpuvi.bkt.clouddn.com/blog/171017/0I14abJJ2B.png?imageslim" alt="mark"></p>
 <ul>
 <li>对于单线程<br>因为是独占CPU, 所以不需要保存<code>寄存器</code>的值(cpu中的几个寄存器)</li>
 <li>对于多线程<br>因为进程切换, 所以内存中需要一块区域, 用来保存<code>寄存器</code>的值, 方便下次执行的时候恢复</li>
@@ -468,8 +468,8 @@
 <blockquote>
 <p>CPU交替执行不同的进程;<br>虚拟内存系统负责管理地址空间(虚拟内存的作用2)</p>
 </blockquote>
-<p><strong>内核对切换进程进行调度</strong><br><img src="http://ovlptpuvi.bkt.clouddn.com/blog/171017/Egd8F1BefC.png?imageslim" alt="mark"></p>
-<h1 id="Linux进程控制"><a href="#Linux进程控制" class="headerlink" title="Linux进程控制"></a>Linux进程控制</h1>
+<p>###　内核对切换进程进行调度<br><img src="http://ovlptpuvi.bkt.clouddn.com/blog/171017/Egd8F1BefC.png?imageslim" alt="mark"></p>
+<h2 id="Linux进程控制"><a href="#Linux进程控制" class="headerlink" title="Linux进程控制"></a>Linux进程控制</h2>
       
     </div>
     
@@ -683,7 +683,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#本节可以学到"><span class="nav-number">1.</span> <span class="nav-text">本节可以学到</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#异常控制流"><span class="nav-number">2.</span> <span class="nav-text">异常控制流</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#进程概念"><span class="nav-number">3.</span> <span class="nav-text">进程概念</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#进程切换"><span class="nav-number">4.</span> <span class="nav-text">进程切换</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux进程控制"><span class="nav-number">5.</span> <span class="nav-text">Linux进程控制</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#本节可以学到"><span class="nav-number">1.</span> <span class="nav-text">本节可以学到</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#异常控制流"><span class="nav-number">2.</span> <span class="nav-text">异常控制流</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#进程"><span class="nav-number">3.</span> <span class="nav-text">进程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#进程切换"><span class="nav-number">3.1.</span> <span class="nav-text">进程切换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#进程在内存中的分布"><span class="nav-number">3.1.1.</span> <span class="nav-text">进程在内存中的分布</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux进程控制"><span class="nav-number">3.2.</span> <span class="nav-text">Linux进程控制</span></a></li></ol></li></ol></div>
             
 
           </div>
