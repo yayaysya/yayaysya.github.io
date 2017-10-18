@@ -86,7 +86,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="CSAPP,小土刀," />
 
 
 
@@ -102,16 +102,21 @@
 
 
 
-<meta name="description" content="猜猜是那个">
-<meta property="og:type" content="website">
-<meta property="og:title" content="暗夜精淋&#39;s Blog">
-<meta property="og:url" content="http://linuxcc.top/categories/hexo/index.html">
+<meta name="description" content="这一节主要涉及的概念是进程和信号;异常部分自己之后再去补充">
+<meta name="keywords" content="CSAPP,小土刀">
+<meta property="og:type" content="article">
+<meta property="og:title" content="&lt;读薄CSAPP学习&gt;五.异常控制流">
+<meta property="og:url" content="http://linuxcc.top/2017/10/18/CSAPP06/index.html">
 <meta property="og:site_name" content="暗夜精淋&#39;s Blog">
-<meta property="og:description" content="猜猜是那个">
+<meta property="og:description" content="这一节主要涉及的概念是进程和信号;异常部分自己之后再去补充">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://ovlptpuvi.bkt.clouddn.com/blog/171017/0I14abJJ2B.png?imageslim">
+<meta property="og:image" content="http://ovlptpuvi.bkt.clouddn.com/blog/171017/Egd8F1BefC.png?imageslim">
+<meta property="og:updated_time" content="2017-10-18T06:40:59.551Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="暗夜精淋&#39;s Blog">
-<meta name="twitter:description" content="猜猜是那个">
+<meta name="twitter:title" content="&lt;读薄CSAPP学习&gt;五.异常控制流">
+<meta name="twitter:description" content="这一节主要涉及的概念是进程和信号;异常部分自己之后再去补充">
+<meta name="twitter:image" content="http://ovlptpuvi.bkt.clouddn.com/blog/171017/0I14abJJ2B.png?imageslim">
 
 
 
@@ -141,13 +146,13 @@
 
 
 
-  <link rel="canonical" href="http://linuxcc.top/categories/hexo/"/>
+  <link rel="canonical" href="http://linuxcc.top/2017/10/18/CSAPP06/"/>
 
 
 
 
 
-  <title>分类: hexo | 暗夜精淋's Blog</title>
+  <title><读薄CSAPP学习>五.异常控制流 | 暗夜精淋's Blog</title>
   
 
 
@@ -166,7 +171,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -314,111 +319,217 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block category">
-
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>hexo<small>分类</small>
-        </h1>
-      </div>
-
-      
-        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://linuxcc.top/2017/10/18/CSAPP06/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="暗夜精淋">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/cat.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="暗夜精淋's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2017/09/30/NextMeihua/" itemprop="url">
-              
-                <span itemprop="name">next主题美化</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline"><读薄CSAPP学习>五.异常控制流</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-30T12:08:34+08:00"
-              content="2017-09-30" >
-          09-30
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-18T14:40:59+08:00">
+                2017-10-18
+              </time>
+            
 
-    </header>
-  </article>
+            
+              <span class="post-meta-divider">|</span>
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2017-10-18T14:40:59+08:00">
+                2017-10-18
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CSAPP/" itemprop="url" rel="index">
+                    <span itemprop="name">CSAPP</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/09/04/jianzhanNote1/" itemprop="url">
-              
-                <span itemprop="name">基于vps和github下的博客建立(TBD)</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-04T19:55:28+08:00"
-              content="2017-09-04" >
-          09-04
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/09/01/tuchuang/" itemprop="url">
-              
-                <span itemprop="name">图床服务</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-01T21:18:55+08:00"
-              content="2017-09-01" >
-          09-01
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+        <p>这一节主要涉及的概念是进程和信号;<br>异常部分自己之后再去补充</p>
+<a id="more"></a> 
+<hr>
+<p><span id="inline-purple">更新记录</span></p>
+<ul>
+<li>2017/10/18:写完初稿</li>
+</ul>
+<h1 id="本节可以学到"><a href="#本节可以学到" class="headerlink" title="本节可以学到"></a>本节可以学到</h1><ul>
+<li>物理地址和虚拟地址的区别</li>
+<li>虚拟内存的作用</li>
+<li>MMU地址翻译的简易原理</li>
+<li>动态内存分配</li>
+<li>内存使用中常见的错误</li>
+</ul>
+<h1 id="异常控制流"><a href="#异常控制流" class="headerlink" title="异常控制流"></a>异常控制流</h1><p><span id="inline-purple">TBD</span></p>
+<h1 id="进程概念"><a href="#进程概念" class="headerlink" title="进程概念"></a>进程概念</h1><p>需要了解进程的工作机制</p>
+<p><strong>两个机制:</strong></p>
+<ul>
+<li>逻辑控制流: 通过<code>上下文切换</code>的内核机制来让每个程序都感觉自己在<code>独占处理器</code></li>
+<li>私有地址空间: 通过<code>虚拟内存</code>的机制让每个程序都感觉自己在<code>独占内存</code></li>
+</ul>
+<p><strong>常用命令:</strong> <code>top</code> / <code>htop</code></p>
+<p><strong>pcb进程控制块</strong></p>
+<h1 id="进程切换"><a href="#进程切换" class="headerlink" title="进程切换"></a>进程切换</h1><blockquote>
+<p><code>内核</code>通过<code>上下文切换</code>的方式让多个进程同时工作</p>
+</blockquote>
+<p><strong>进程在内存中的分布</strong><br><img src="http://ovlptpuvi.bkt.clouddn.com/blog/171017/0I14abJJ2B.png?imageslim" alt="mark"></p>
+<ul>
+<li>对于单线程<br>因为是独占CPU, 所以不需要保存<code>寄存器</code>的值(cpu中的几个寄存器)</li>
+<li>对于多线程<br>因为进程切换, 所以内存中需要一块区域, 用来保存<code>寄存器</code>的值, 方便下次执行的时候恢复</li>
+</ul>
+<blockquote>
+<p>CPU交替执行不同的进程;<br>虚拟内存系统负责管理地址空间(虚拟内存的作用2)</p>
+</blockquote>
+<p><strong>内核对切换进程进行调度</strong><br><img src="http://ovlptpuvi.bkt.clouddn.com/blog/171017/Egd8F1BefC.png?imageslim" alt="mark"></p>
+<h1 id="Linux进程控制"><a href="#Linux进程控制" class="headerlink" title="Linux进程控制"></a>Linux进程控制</h1>
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSAPP/" rel="tag"><i class="fa fa-tag"></i> CSAPP</a>
+          
+            <a href="/tags/小土刀/" rel="tag"><i class="fa fa-tag"></i> 小土刀</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/17/CSAPP08/" rel="next" title="<读薄CSAPP学习>七.虚拟内存与动态内存分配">
+                <i class="fa fa-chevron-left"></i> <读薄CSAPP学习>七.虚拟内存与动态内存分配
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -426,6 +537,12 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMDYxMS83MTY2"></div>
+    
+  </div>
+
 
         </div>
         
@@ -446,8 +563,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           
             <img class="site-author-image" itemprop="image"
@@ -547,6 +673,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#本节可以学到"><span class="nav-number">1.</span> <span class="nav-text">本节可以学到</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#异常控制流"><span class="nav-number">2.</span> <span class="nav-text">异常控制流</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#进程概念"><span class="nav-number">3.</span> <span class="nav-text">进程概念</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#进程切换"><span class="nav-number">4.</span> <span class="nav-text">进程切换</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux进程控制"><span class="nav-number">5.</span> <span class="nav-text">Linux进程控制</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -699,6 +841,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
 
   
 
@@ -727,6 +873,17 @@
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 
