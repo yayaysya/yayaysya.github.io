@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://linuxcc.top/2017/10/18/CSAPP06/</loc>
+    <loc>http://linuxcc.top/2017/10/18/LinuxExecve/</loc>
     
-    <lastmod>2017-10-18T09:37:25.220Z</lastmod>
+    <lastmod>2017-10-18T10:29:16.304Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://linuxcc.top/2017/10/18/LinuxWait/</loc>
     
-    <lastmod>2017-10-18T09:36:58.300Z</lastmod>
+    <lastmod>2017-10-18T10:27:48.598Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://linuxcc.top/2017/10/18/CSAPP06/</loc>
+    
+    <lastmod>2017-10-18T09:37:25.220Z</lastmod>
     
   </url>
   

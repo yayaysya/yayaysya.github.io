@@ -86,7 +86,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="进程,后台进程," />
+  <meta name="keywords" content="wait,waitpid," />
 
 
 
@@ -103,16 +103,16 @@
 
 
 <meta name="description" content="本节可以学到:   wait与waitpid()的使用">
-<meta name="keywords" content="进程,后台进程">
+<meta name="keywords" content="wait,waitpid">
 <meta property="og:type" content="article">
-<meta property="og:title" content="&lt;linux系统挖掘机&gt; wait与waitpid()">
+<meta property="og:title" content="&lt;开linux系统挖掘机&gt; wait与waitpid()">
 <meta property="og:url" content="http://linuxcc.top/2017/10/18/LinuxWait/index.html">
 <meta property="og:site_name" content="暗夜精淋&#39;s Blog">
 <meta property="og:description" content="本节可以学到:   wait与waitpid()的使用">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-18T09:36:58.300Z">
+<meta property="og:updated_time" content="2017-10-18T10:27:48.598Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="&lt;linux系统挖掘机&gt; wait与waitpid()">
+<meta name="twitter:title" content="&lt;开linux系统挖掘机&gt; wait与waitpid()">
 <meta name="twitter:description" content="本节可以学到:   wait与waitpid()的使用">
 
 
@@ -149,7 +149,7 @@
 
 
 
-  <title><linux系统挖掘机> wait与waitpid() | 暗夜精淋's Blog</title>
+  <title><开linux系统挖掘机> wait与waitpid() | 暗夜精淋's Blog</title>
   
 
 
@@ -347,7 +347,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline"><linux系统挖掘机> wait与waitpid()</h1>
+          <h1 class="post-title" itemprop="name headline"><开linux系统挖掘机> wait与waitpid()</h1>
         
 
         <div class="post-meta">
@@ -375,7 +375,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-10-18T17:36:58+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2017-10-18T18:27:48+08:00">
                 2017-10-18
               </time>
             
@@ -475,6 +475,7 @@
 <h2 id="函数说明-1"><a href="#函数说明-1" class="headerlink" title="函数说明"></a>函数说明</h2><p>作用: 相当于pid=-1的waitpid()</p>
 <p>范例<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unistd.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/types.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/wait.h&gt;</span></span></div><div class="line">main()</div><div class="line">&#123;</div><div class="line">    <span class="keyword">pid_t</span> pid;</div><div class="line">    <span class="keyword">int</span> status, i;</div><div class="line">    <span class="keyword">if</span>(fork() == <span class="number">0</span>)</div><div class="line">    &#123;</div><div class="line">        <span class="built_in">printf</span>(<span class="string">"This is the child process. pid =%d\n"</span>, getpid());</div><div class="line">        <span class="built_in">exit</span>(<span class="number">5</span>);</div><div class="line">     &#125;</div><div class="line">    <span class="keyword">else</span></div><div class="line">    &#123;</div><div class="line">        sleep(<span class="number">1</span>);</div><div class="line">        <span class="built_in">printf</span>(<span class="string">"This is the parent process, wait for child...\n"</span>;</div><div class="line">        pid = wait(&amp;status);</div><div class="line">        i = WEXITSTATUS(status);</div><div class="line">        <span class="built_in">printf</span>(<span class="string">"child's pid =%d . exit status=^d\n"</span>, pid, i);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>执行：<br>This is the child process. pid=1501<br>This is the parent process, wait for child…<br>child’s pid =1501, exit status =5</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>wait()函数涉及主进程与子进程的关系; 大体作用就是主进程阻塞,等子进程结束的信号<br>waitpid()功能要更丰富, 可以涉及到进程组的等待</p>
 <h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><ul>
 <li><p><a href="http://blog.csdn.net/roland_sun/article/details/32084825" target="_blank" rel="external">http://blog.csdn.net/roland_sun/article/details/32084825</a></p>
 </li>
@@ -498,9 +499,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/进程/" rel="tag"><i class="fa fa-tag"></i> 进程</a>
+            <a href="/tags/wait/" rel="tag"><i class="fa fa-tag"></i> wait</a>
           
-            <a href="/tags/后台进程/" rel="tag"><i class="fa fa-tag"></i> 后台进程</a>
+            <a href="/tags/waitpid/" rel="tag"><i class="fa fa-tag"></i> waitpid</a>
           
         </div>
       
@@ -522,6 +523,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/18/LinuxExecve/" rel="prev" title="<��linuxϵͳ�ھ���> execve">
+                <��linuxϵͳ�ھ���> execve <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -603,7 +608,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-count">16</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -625,7 +630,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">16</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -695,7 +700,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#waitpid-函数：中断-结束-进程函数"><span class="nav-number">1.</span> <span class="nav-text">waitpid()函数：中断(结束)进程函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用场景"><span class="nav-number">1.1.</span> <span class="nav-text">使用场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#头文件与函数原型"><span class="nav-number">1.2.</span> <span class="nav-text">头文件与函数原型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数说明"><span class="nav-number">1.3.</span> <span class="nav-text">函数说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参数"><span class="nav-number">1.4.</span> <span class="nav-text">参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#返回值"><span class="nav-number">1.5.</span> <span class="nav-text">返回值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#wait函数"><span class="nav-number">1.6.</span> <span class="nav-text">wait函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#头文件与函数原型-1"><span class="nav-number">1.7.</span> <span class="nav-text">头文件与函数原型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数说明-1"><span class="nav-number">1.8.</span> <span class="nav-text">函数说明</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考链接"><span class="nav-number">2.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#waitpid-函数：中断-结束-进程函数"><span class="nav-number">1.</span> <span class="nav-text">waitpid()函数：中断(结束)进程函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用场景"><span class="nav-number">1.1.</span> <span class="nav-text">使用场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#头文件与函数原型"><span class="nav-number">1.2.</span> <span class="nav-text">头文件与函数原型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数说明"><span class="nav-number">1.3.</span> <span class="nav-text">函数说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参数"><span class="nav-number">1.4.</span> <span class="nav-text">参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#返回值"><span class="nav-number">1.5.</span> <span class="nav-text">返回值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#wait函数"><span class="nav-number">1.6.</span> <span class="nav-text">wait函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#头文件与函数原型-1"><span class="nav-number">1.7.</span> <span class="nav-text">头文件与函数原型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数说明-1"><span class="nav-number">1.8.</span> <span class="nav-text">函数说明</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">2.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考链接"><span class="nav-number">3.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
             
 
           </div>

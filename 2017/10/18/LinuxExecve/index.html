@@ -86,7 +86,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="execve," />
 
 
 
@@ -102,16 +102,18 @@
 
 
 
-<meta name="description" content="猜猜是那个">
-<meta property="og:type" content="website">
-<meta property="og:title" content="暗夜精淋&#39;s Blog">
-<meta property="og:url" content="http://linuxcc.top/tags/tag1/index.html">
+<meta name="description" content="���ڿ���ѧ��:   execve()��ʹ��; execve()������: �ڽ����������³���">
+<meta name="keywords" content="execve">
+<meta property="og:type" content="article">
+<meta property="og:title" content="&lt;��linuxϵͳ�ھ���&gt; execve">
+<meta property="og:url" content="http://linuxcc.top/2017/10/18/LinuxExecve/index.html">
 <meta property="og:site_name" content="暗夜精淋&#39;s Blog">
-<meta property="og:description" content="猜猜是那个">
+<meta property="og:description" content="���ڿ���ѧ��:   execve()��ʹ��; execve()������: �ڽ����������³���">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-10-18T10:29:16.304Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="暗夜精淋&#39;s Blog">
-<meta name="twitter:description" content="猜猜是那个">
+<meta name="twitter:title" content="&lt;��linuxϵͳ�ھ���&gt; execve">
+<meta name="twitter:description" content="���ڿ���ѧ��:   execve()��ʹ��; execve()������: �ڽ����������³���">
 
 
 
@@ -141,13 +143,13 @@
 
 
 
-  <link rel="canonical" href="http://linuxcc.top/tags/tag1/"/>
+  <link rel="canonical" href="http://linuxcc.top/2017/10/18/LinuxExecve/"/>
 
 
 
 
 
-  <title>标签: tag1 | 暗夜精淋's Blog</title>
+  <title><��linuxϵͳ�ھ���> execve | 暗夜精淋's Blog</title>
   
 
 
@@ -166,7 +168,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -314,54 +316,209 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>tag1<small>标签</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://linuxcc.top/2017/10/18/LinuxExecve/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="暗夜精淋">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/cat.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="暗夜精淋's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2017/09/01/FirstDay/" itemprop="url">
-              
-                <span itemprop="name">第一篇博客</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline"><��linuxϵͳ�ھ���> execve</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-01T16:02:03+08:00"
-              content="2017-09-01" >
-          09-01
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-18T18:28:34+08:00">
+                2017-10-18
+              </time>
+            
 
-    </header>
-  </article>
+            
+              <span class="post-meta-divider">|</span>
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2017-10-18T18:29:16+08:00">
+                2017-10-18
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>���ڿ���ѧ��: </p>
+<ul>
+<li>execve()��ʹ��;</li>
+<li>execve()������: �ڽ����������³���</li>
+</ul>
+<a id="more"></a> 
+<hr>
+<p><span id="inline-purple">���¼�¼</span></p>
+<ul>
+<li>2017/10/18:д������</li>
+</ul>
+<h1 id="execve"><a href="#execve" class="headerlink" title="execve"></a>execve</h1><h2 id="ʹ�o���"><a href="#ʹ�o���" class="headerlink" title="ʹ�ó���"></a>ʹ�ó���</h2><p>�ڸ�������forkһ���ӽ��̣����ӽ����е���exec���������µĳ���</p>
+<h2 id="ͷ�l��뺯��ԭ��"><a href="#ͷ�l��뺯��ԭ��" class="headerlink" title="ͷ�ļ��뺯��ԭ��"></a>ͷ�ļ��뺯��ԭ��</h2><ul>
+<li>ͷ�ļ�<code>#include&lt;unistd.h&gt;</code></li>
+<li>�������� <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">execve</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> *filename, <span class="keyword">char</span> *<span class="keyword">const</span> argv[ ], <span class="keyword">char</span> *<span class="keyword">const</span> envp[ ])</span></span>;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="����˵��"><a href="#����˵��" class="headerlink" title="����˵��"></a>����˵��</h2><p>execve()����ִ�в���filename�ַ������������ļ�·����</p>
+<ul>
+<li>�ڶ�����������������ָ�������ݸ�ִ���ļ���������Ҫ�Կ�ָ��(NULL)����</li>
+<li>����һ��������Ϊ���ݸ�ִ���ļ����»�����������</li>
+</ul>
+<h2 id="���غ���"><a href="#���غ���" class="headerlink" title="���غ���"></a>���غ���</h2><p>exec����һ��������������execveΪ�ں˼�ϵͳ���ã�������execl��execle��execlp��execv��execvp�����ǵ���execve�Ŀ⺯����</p>
+<h2 id="����"><a href="#����" class="headerlink" title="����"></a>����</h2><p>����1<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;unistd.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">     <span class="keyword">char</span> *argv[ ]=&#123;<span class="string">"ls"</span>, <span class="string">"-al"</span>, <span class="string">"/etc/passwd"</span>, <span class="literal">NULL</span>&#125;;</div><div class="line">     <span class="keyword">char</span> *envp[ ]=&#123;<span class="string">"PATH=/bin"</span>, <span class="literal">NULL</span>&#125;</div><div class="line">     execve(<span class="string">"/bin/ls"</span>, argv, envp);</div><div class="line"> &#125;</div></pre></td></tr></table></figure></p>
+<p>����2<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* execve.c */</span></div><div class="line"></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unistd.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="keyword">int</span></div><div class="line">main(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</div><div class="line">&#123;</div><div class="line">   <span class="keyword">char</span> *newargv[] = &#123; <span class="literal">NULL</span>, <span class="string">"hello"</span>, <span class="string">"world"</span>, <span class="literal">NULL</span> &#125;;</div><div class="line">   <span class="keyword">char</span> *newenviron[] = &#123; <span class="literal">NULL</span> &#125;;</div><div class="line"></div><div class="line">   <span class="keyword">if</span> (argc != <span class="number">2</span>) &#123;</div><div class="line">       <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"Usage: %s &lt;file-to-exec&gt;\n"</span>, argv[<span class="number">0</span>]);</div><div class="line">       <span class="built_in">exit</span>(EXIT_FAILURE);</div><div class="line">   &#125;</div><div class="line"></div><div class="line">   newargv[<span class="number">0</span>] = argv[<span class="number">1</span>];</div><div class="line"></div><div class="line">   execve(argv[<span class="number">1</span>], newargv, newenviron);</div><div class="line">   perror(<span class="string">"execve"</span>);   <span class="comment">/* execve() returns only on error */</span></div><div class="line">   <span class="built_in">exit</span>(EXIT_FAILURE);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h1 id="linux-fork-��execve-������"><a href="#linux-fork-��execve-������" class="headerlink" title="linux fork()��execve()������"></a>linux fork()��execve()������</h1><p>fork�Ƿ�����execve�Ǳ�����</p>
+<p> execϵ�е�ϵͳ�����ǰѵ�ǰ�����滻��Ҫִ�еĳ��򣬶�fork��������һ���͵�ǰ����һ���Ľ��̣���Ȼͨ��ִ�в�ͬ�Ĵ���������ͨ��������һ�����򣬶�ͬʱ����ԭ�������еķ����ǣ�fork+exec��</p>
+<h1 id="�ܽ�"><a href="#�ܽ�" class="headerlink" title="�ܽ�"></a>�ܽ�</h1><p>execϵ����Ҫ�����þ����ڽ�����ȥ������һ������. �Լ�ԭ���ĳ����ͷϵ���.�������̵�ʱ��ʹ��Ƶ�ʲ���.�����漰�����̹�ϵ, ���û����˽�һ��</p>
+<h1 id="�ο�����"><a href="#�ο�����" class="headerlink" title="�ο�����"></a>�ο�����</h1><p>1.<a href="http://www.cnblogs.com/jxhd1/p/6706701.html" target="_blank" rel="external">http://www.cnblogs.com/jxhd1/p/6706701.html</a><br>2.<a href="http://man7.org/linux/man-pages/man2/execve.2.html" target="_blank" rel="external">http://man7.org/linux/man-pages/man2/execve.2.html</a></p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/execve/" rel="tag"><i class="fa fa-tag"></i> execve</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/18/LinuxWait/" rel="next" title="<开linux系统挖掘机> wait与waitpid()">
+                <i class="fa fa-chevron-left"></i> <开linux系统挖掘机> wait与waitpid()
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -369,6 +526,12 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMDYxMS83MTY2"></div>
+    
+  </div>
+
 
         </div>
         
@@ -389,8 +552,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           
             <img class="site-author-image" itemprop="image"
@@ -490,6 +662,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#execve"><span class="nav-number">1.</span> <span class="nav-text">execve</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ʹ�o���"><span class="nav-number">1.1.</span> <span class="nav-text">ʹ�ó���</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ͷ�l��뺯��ԭ��"><span class="nav-number">1.2.</span> <span class="nav-text">ͷ�ļ��뺯��ԭ��</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#����˵��"><span class="nav-number">1.3.</span> <span class="nav-text">����˵��</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#���غ���"><span class="nav-number">1.4.</span> <span class="nav-text">���غ���</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#����"><span class="nav-number">1.5.</span> <span class="nav-text">����</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#linux-fork-��execve-������"><span class="nav-number">2.</span> <span class="nav-text">linux fork()��execve()������</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#�ܽ�"><span class="nav-number">3.</span> <span class="nav-text">�ܽ�</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#�ο�����"><span class="nav-number">4.</span> <span class="nav-text">�ο�����</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -642,6 +830,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
 
   
 
@@ -670,6 +862,17 @@
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 

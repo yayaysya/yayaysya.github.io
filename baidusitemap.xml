@@ -4,6 +4,48 @@
 
     
   <url>
+    <loc>http://linuxcc.top/2017/10/18/LinuxExecve/</loc>
+    <lastmod>2017-10-18T10:29:16.304Z</lastmod>
+    <data>
+        <display>
+        <title><��linuxϵͳ�ھ���> execve</title>
+        <pubTime>2017-10-18T10:28:34.224Z</pubTime>
+        
+        <tag>execve</tag>
+         
+         
+           
+             
+              <breadCrumb title="linux" url="http://linuxcc.top/categories/linux/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://linuxcc.top/2017/10/18/LinuxWait/</loc>
+    <lastmod>2017-10-18T10:27:48.598Z</lastmod>
+    <data>
+        <display>
+        <title><开linux系统挖掘机> wait与waitpid()</title>
+        <pubTime>2017-10-18T09:36:50.914Z</pubTime>
+        
+        <tag>wait</tag>
+         
+        <tag>waitpid</tag>
+         
+         
+           
+             
+              <breadCrumb title="linux" url="http://linuxcc.top/categories/linux/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://linuxcc.top/2017/10/18/CSAPP06/</loc>
     <lastmod>2017-10-18T09:37:25.220Z</lastmod>
     <data>
@@ -19,28 +61,6 @@
            
              
               <breadCrumb title="CSAPP" url="http://linuxcc.top/categories/CSAPP/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://linuxcc.top/2017/10/18/LinuxWait/</loc>
-    <lastmod>2017-10-18T09:36:58.300Z</lastmod>
-    <data>
-        <display>
-        <title><linux系统挖掘机> wait与waitpid()</title>
-        <pubTime>2017-10-18T09:36:50.914Z</pubTime>
-        
-        <tag>进程</tag>
-         
-        <tag>后台进程</tag>
-         
-         
-           
-             
-              <breadCrumb title="linux" url="http://linuxcc.top/categories/linux/"/>
           
         </display>
     </data>
