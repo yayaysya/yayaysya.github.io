@@ -102,18 +102,18 @@
 
 
 
-<meta name="description" content="���ڿ���ѧ��:   execve()��ʹ��; execve()������: �ڽ����������³���">
+<meta name="description" content="本节可以学到:   execve()的使用; execve()的作用: 在进程中启动新程序">
 <meta name="keywords" content="execve">
 <meta property="og:type" content="article">
-<meta property="og:title" content="&lt;��linuxϵͳ�ھ���&gt; execve">
+<meta property="og:title" content="&lt;开linux系统挖掘机&gt; execve">
 <meta property="og:url" content="http://linuxcc.top/2017/10/18/LinuxExecve/index.html">
 <meta property="og:site_name" content="暗夜精淋&#39;s Blog">
-<meta property="og:description" content="���ڿ���ѧ��:   execve()��ʹ��; execve()������: �ڽ����������³���">
+<meta property="og:description" content="本节可以学到:   execve()的使用; execve()的作用: 在进程中启动新程序">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-18T10:29:16.304Z">
+<meta property="og:updated_time" content="2017-10-18T10:34:23.311Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="&lt;��linuxϵͳ�ھ���&gt; execve">
-<meta name="twitter:description" content="���ڿ���ѧ��:   execve()��ʹ��; execve()������: �ڽ����������³���">
+<meta name="twitter:title" content="&lt;开linux系统挖掘机&gt; execve">
+<meta name="twitter:description" content="本节可以学到:   execve()的使用; execve()的作用: 在进程中启动新程序">
 
 
 
@@ -149,7 +149,7 @@
 
 
 
-  <title><��linuxϵͳ�ھ���> execve | 暗夜精淋's Blog</title>
+  <title><开linux系统挖掘机> execve | 暗夜精淋's Blog</title>
   
 
 
@@ -347,7 +347,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline"><��linuxϵͳ�ھ���> execve</h1>
+          <h1 class="post-title" itemprop="name headline"><开linux系统挖掘机> execve</h1>
         
 
         <div class="post-meta">
@@ -375,7 +375,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-10-18T18:29:16+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2017-10-18T18:34:23+08:00">
                 2017-10-18
               </time>
             
@@ -431,35 +431,35 @@
       
 
       
-        <p>���ڿ���ѧ��: </p>
+        <p>本节可以学到: </p>
 <ul>
-<li>execve()��ʹ��;</li>
-<li>execve()������: �ڽ����������³���</li>
+<li>execve()的使用;</li>
+<li>execve()的作用: 在进程中启动新程序</li>
 </ul>
 <a id="more"></a> 
 <hr>
-<p><span id="inline-purple">���¼�¼</span></p>
+<p><span id="inline-purple">更新记录</span></p>
 <ul>
-<li>2017/10/18:д������</li>
+<li>2017/10/18:写完初稿</li>
 </ul>
-<h1 id="execve"><a href="#execve" class="headerlink" title="execve"></a>execve</h1><h2 id="ʹ�o���"><a href="#ʹ�o���" class="headerlink" title="ʹ�ó���"></a>ʹ�ó���</h2><p>�ڸ�������forkһ���ӽ��̣����ӽ����е���exec���������µĳ���</p>
-<h2 id="ͷ�l��뺯��ԭ��"><a href="#ͷ�l��뺯��ԭ��" class="headerlink" title="ͷ�ļ��뺯��ԭ��"></a>ͷ�ļ��뺯��ԭ��</h2><ul>
-<li>ͷ�ļ�<code>#include&lt;unistd.h&gt;</code></li>
-<li>�������� <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">execve</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> *filename, <span class="keyword">char</span> *<span class="keyword">const</span> argv[ ], <span class="keyword">char</span> *<span class="keyword">const</span> envp[ ])</span></span>;</div></pre></td></tr></table></figure>
+<h1 id="execve"><a href="#execve" class="headerlink" title="execve"></a>execve</h1><h2 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h2><p>在父进程中fork一个子进程，在子进程中调用exec函数启动新的程序</p>
+<h2 id="头文件与函数原型"><a href="#头文件与函数原型" class="headerlink" title="头文件与函数原型"></a>头文件与函数原型</h2><ul>
+<li>头文件<code>#include&lt;unistd.h&gt;</code></li>
+<li>函数定义 <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">execve</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> *filename, <span class="keyword">char</span> *<span class="keyword">const</span> argv[ ], <span class="keyword">char</span> *<span class="keyword">const</span> envp[ ])</span></span>;</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<h2 id="����˵��"><a href="#����˵��" class="headerlink" title="����˵��"></a>����˵��</h2><p>execve()����ִ�в���filename�ַ������������ļ�·����</p>
+<h2 id="函数说明"><a href="#函数说明" class="headerlink" title="函数说明"></a>函数说明</h2><p>execve()用来执行参数filename字符串所代表的文件路径，</p>
 <ul>
-<li>�ڶ�����������������ָ�������ݸ�ִ���ļ���������Ҫ�Կ�ָ��(NULL)����</li>
-<li>����һ��������Ϊ���ݸ�ִ���ļ����»�����������</li>
+<li>第二个参数是利用数组指针来传递给执行文件，并且需要以空指针(NULL)结束</li>
+<li>最后一个参数则为传递给执行文件的新环境变量数组</li>
 </ul>
-<h2 id="���غ���"><a href="#���غ���" class="headerlink" title="���غ���"></a>���غ���</h2><p>exec����һ��������������execveΪ�ں˼�ϵͳ���ã�������execl��execle��execlp��execv��execvp�����ǵ���execve�Ŀ⺯����</p>
-<h2 id="����"><a href="#����" class="headerlink" title="����"></a>����</h2><p>����1<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;unistd.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">     <span class="keyword">char</span> *argv[ ]=&#123;<span class="string">"ls"</span>, <span class="string">"-al"</span>, <span class="string">"/etc/passwd"</span>, <span class="literal">NULL</span>&#125;;</div><div class="line">     <span class="keyword">char</span> *envp[ ]=&#123;<span class="string">"PATH=/bin"</span>, <span class="literal">NULL</span>&#125;</div><div class="line">     execve(<span class="string">"/bin/ls"</span>, argv, envp);</div><div class="line"> &#125;</div></pre></td></tr></table></figure></p>
-<p>����2<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* execve.c */</span></div><div class="line"></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unistd.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="keyword">int</span></div><div class="line">main(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</div><div class="line">&#123;</div><div class="line">   <span class="keyword">char</span> *newargv[] = &#123; <span class="literal">NULL</span>, <span class="string">"hello"</span>, <span class="string">"world"</span>, <span class="literal">NULL</span> &#125;;</div><div class="line">   <span class="keyword">char</span> *newenviron[] = &#123; <span class="literal">NULL</span> &#125;;</div><div class="line"></div><div class="line">   <span class="keyword">if</span> (argc != <span class="number">2</span>) &#123;</div><div class="line">       <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"Usage: %s &lt;file-to-exec&gt;\n"</span>, argv[<span class="number">0</span>]);</div><div class="line">       <span class="built_in">exit</span>(EXIT_FAILURE);</div><div class="line">   &#125;</div><div class="line"></div><div class="line">   newargv[<span class="number">0</span>] = argv[<span class="number">1</span>];</div><div class="line"></div><div class="line">   execve(argv[<span class="number">1</span>], newargv, newenviron);</div><div class="line">   perror(<span class="string">"execve"</span>);   <span class="comment">/* execve() returns only on error */</span></div><div class="line">   <span class="built_in">exit</span>(EXIT_FAILURE);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h1 id="linux-fork-��execve-������"><a href="#linux-fork-��execve-������" class="headerlink" title="linux fork()��execve()������"></a>linux fork()��execve()������</h1><p>fork�Ƿ�����execve�Ǳ�����</p>
-<p> execϵ�е�ϵͳ�����ǰѵ�ǰ�����滻��Ҫִ�еĳ��򣬶�fork��������һ���͵�ǰ����һ���Ľ��̣���Ȼͨ��ִ�в�ͬ�Ĵ���������ͨ��������һ�����򣬶�ͬʱ����ԭ�������еķ����ǣ�fork+exec��</p>
-<h1 id="�ܽ�"><a href="#�ܽ�" class="headerlink" title="�ܽ�"></a>�ܽ�</h1><p>execϵ����Ҫ�����þ����ڽ�����ȥ������һ������. �Լ�ԭ���ĳ����ͷϵ���.�������̵�ʱ��ʹ��Ƶ�ʲ���.�����漰�����̹�ϵ, ���û����˽�һ��</p>
-<h1 id="�ο�����"><a href="#�ο�����" class="headerlink" title="�ο�����"></a>�ο�����</h1><p>1.<a href="http://www.cnblogs.com/jxhd1/p/6706701.html" target="_blank" rel="external">http://www.cnblogs.com/jxhd1/p/6706701.html</a><br>2.<a href="http://man7.org/linux/man-pages/man2/execve.2.html" target="_blank" rel="external">http://man7.org/linux/man-pages/man2/execve.2.html</a></p>
+<h2 id="相关函数"><a href="#相关函数" class="headerlink" title="相关函数"></a>相关函数</h2><p>exec函数一共有六个，其中execve为内核级系统调用，其他（execl，execle，execlp，execv，execvp）都是调用execve的库函数。</p>
+<h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><p>栗子1<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;unistd.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">     <span class="keyword">char</span> *argv[ ]=&#123;<span class="string">"ls"</span>, <span class="string">"-al"</span>, <span class="string">"/etc/passwd"</span>, <span class="literal">NULL</span>&#125;;</div><div class="line">     <span class="keyword">char</span> *envp[ ]=&#123;<span class="string">"PATH=/bin"</span>, <span class="literal">NULL</span>&#125;</div><div class="line">     execve(<span class="string">"/bin/ls"</span>, argv, envp);</div><div class="line"> &#125;</div></pre></td></tr></table></figure></p>
+<p>栗子2<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* execve.c */</span></div><div class="line"></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unistd.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="keyword">int</span></div><div class="line">main(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</div><div class="line">&#123;</div><div class="line">   <span class="keyword">char</span> *newargv[] = &#123; <span class="literal">NULL</span>, <span class="string">"hello"</span>, <span class="string">"world"</span>, <span class="literal">NULL</span> &#125;;</div><div class="line">   <span class="keyword">char</span> *newenviron[] = &#123; <span class="literal">NULL</span> &#125;;</div><div class="line"></div><div class="line">   <span class="keyword">if</span> (argc != <span class="number">2</span>) &#123;</div><div class="line">       <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"Usage: %s &lt;file-to-exec&gt;\n"</span>, argv[<span class="number">0</span>]);</div><div class="line">       <span class="built_in">exit</span>(EXIT_FAILURE);</div><div class="line">   &#125;</div><div class="line"></div><div class="line">   newargv[<span class="number">0</span>] = argv[<span class="number">1</span>];</div><div class="line"></div><div class="line">   execve(argv[<span class="number">1</span>], newargv, newenviron);</div><div class="line">   perror(<span class="string">"execve"</span>);   <span class="comment">/* execve() returns only on error */</span></div><div class="line">   <span class="built_in">exit</span>(EXIT_FAILURE);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h1 id="linux-fork-和execve-的区别"><a href="#linux-fork-和execve-的区别" class="headerlink" title="linux fork()和execve()的区别"></a>linux fork()和execve()的区别</h1><p>fork是分身，execve是变身。</p>
+<p> exec系列的系统调用是把当前程序替换成要执行的程序，而fork用来产生一个和当前进程一样的进程（虽然通常执行不同的代码流）。通常运行另一个程序，而同时保留原程序运行的方法是，fork+exec。</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>exec系列主要的作用就是在进程中去启动另一个进程. 自己原本的程序就废掉了.具体编程的时候使用频率不高.不过涉及到进程关系, 最好还是了解一下</p>
+<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><p>1.<a href="http://www.cnblogs.com/jxhd1/p/6706701.html" target="_blank" rel="external">http://www.cnblogs.com/jxhd1/p/6706701.html</a><br>2.<a href="http://man7.org/linux/man-pages/man2/execve.2.html" target="_blank" rel="external">http://man7.org/linux/man-pages/man2/execve.2.html</a></p>
 
       
     </div>
@@ -672,7 +672,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#execve"><span class="nav-number">1.</span> <span class="nav-text">execve</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ʹ�o���"><span class="nav-number">1.1.</span> <span class="nav-text">ʹ�ó���</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ͷ�l��뺯��ԭ��"><span class="nav-number">1.2.</span> <span class="nav-text">ͷ�ļ��뺯��ԭ��</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#����˵��"><span class="nav-number">1.3.</span> <span class="nav-text">����˵��</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#���غ���"><span class="nav-number">1.4.</span> <span class="nav-text">���غ���</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#����"><span class="nav-number">1.5.</span> <span class="nav-text">����</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#linux-fork-��execve-������"><span class="nav-number">2.</span> <span class="nav-text">linux fork()��execve()������</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#�ܽ�"><span class="nav-number">3.</span> <span class="nav-text">�ܽ�</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#�ο�����"><span class="nav-number">4.</span> <span class="nav-text">�ο�����</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#execve"><span class="nav-number">1.</span> <span class="nav-text">execve</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用场景"><span class="nav-number">1.1.</span> <span class="nav-text">使用场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#头文件与函数原型"><span class="nav-number">1.2.</span> <span class="nav-text">头文件与函数原型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数说明"><span class="nav-number">1.3.</span> <span class="nav-text">函数说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相关函数"><span class="nav-number">1.4.</span> <span class="nav-text">相关函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#例子"><span class="nav-number">1.5.</span> <span class="nav-text">例子</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#linux-fork-和execve-的区别"><span class="nav-number">2.</span> <span class="nav-text">linux fork()和execve()的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考链接"><span class="nav-number">4.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
             
 
           </div>
