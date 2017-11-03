@@ -113,7 +113,7 @@
 <meta property="og:image" content="http://ovlptpuvi.bkt.clouddn.com/blog/171009/68A9lHfica.jpg?imageslim">
 <meta property="og:image" content="leanote://file/getImage?fileId=59e224a2ab644154b2001bf1">
 <meta property="og:image" content="leanote://file/getImage?fileId=59e22d3bab644156cf00210b">
-<meta property="og:updated_time" content="2017-10-17T05:41:57.061Z">
+<meta property="og:updated_time" content="2017-11-03T11:02:15.046Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="10月日志">
 <meta name="twitter:description" content="江城如画里，山晓望晴空。">
@@ -379,8 +379,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-10-17T13:41:57+08:00">
-                2017-10-17
+              <time title="更新于" itemprop="dateModified" datetime="2017-11-03T19:02:15+08:00">
+                2017-11-03
               </time>
             
           </span>
@@ -516,6 +516,59 @@
 <h2 id="其他学习-5"><a href="#其他学习-5" class="headerlink" title="其他学习"></a>其他学习</h2><ol>
 <li>学习了第二节与第七节的知识</li>
 </ol>
+<hr>
+<p><span id="inline_purple">10-17</span></p>
+<h1 id="今天收获10-17"><a href="#今天收获10-17" class="headerlink" title="今天收获10-17"></a>今天收获10-17</h1><h2 id="工作情况-6"><a href="#工作情况-6" class="headerlink" title="工作情况"></a>工作情况</h2><ol>
+<li>研究段错误的问题<br>发现加载车型后会出现段错误, 但是不加载不会出现</li>
+</ol>
+<h2 id="其他学习-6"><a href="#其他学习-6" class="headerlink" title="其他学习"></a>其他学习</h2><ol>
+<li>总结第七节的知识</li>
+</ol>
+<hr>
+<p><span id="inline_purple">10-18</span></p>
+<h1 id="今天收获10-18"><a href="#今天收获10-18" class="headerlink" title="今天收获10-18"></a>今天收获10-18</h1><h2 id="工作情况-7"><a href="#工作情况-7" class="headerlink" title="工作情况"></a>工作情况</h2><ol>
+<li>研究段错误的问题<br>发现加载车型后会出现段错误, 但是不加载不会出现<br>了解了发生爆闪帧未匹配的原因</li>
+</ol>
+<h2 id="其他学习-7"><a href="#其他学习-7" class="headerlink" title="其他学习"></a>其他学习</h2><ol>
+<li>总结第七节的知识</li>
+</ol>
+<hr>
+<p><span id="inline_purple">10-19</span></p>
+<h1 id="今天收获10-19"><a href="#今天收获10-19" class="headerlink" title="今天收获10-19"></a>今天收获10-19</h1><h2 id="工作情况-8"><a href="#工作情况-8" class="headerlink" title="工作情况"></a>工作情况</h2><ol>
+<li>研究段错误的问题<br>研究malloc失败造成的爆闪帧未匹配对段错误的影响<br>对照Predict_cartype函数研究段错误的问题<h2 id="其他学习-8"><a href="#其他学习-8" class="headerlink" title="其他学习"></a>其他学习</h2></li>
+<li>学习新的一节知识</li>
+<li>pcb进程控制块知识</li>
+<li>pcb信号集原理</li>
+</ol>
+<hr>
+<p><span id="inline_purple">10-20</span></p>
+<h1 id="今天收获10-20"><a href="#今天收获10-20" class="headerlink" title="今天收获10-20"></a>今天收获10-20</h1><h2 id="工作情况-9"><a href="#工作情况-9" class="headerlink" title="工作情况"></a>工作情况</h2><ol>
+<li>研究段错误的问题<br>原本以为是upload_event中存在问题, 经过验证后发现不是</li>
+</ol>
+<hr>
+<p><span id="inline_purple">10/23–10/25</span></p>
+<h1 id="今天收获10-23–10-25"><a href="#今天收获10-23–10-25" class="headerlink" title="今天收获10/23–10/25"></a>今天收获10/23–10/25</h1><h2 id="工作情况-10"><a href="#工作情况-10" class="headerlink" title="工作情况"></a>工作情况</h2><ol>
+<li>研究段错误的问题<br>继续寻找段错误的原因<br>先把cartype_lib_init打开, Predict_cartype关闭, 然后进行验证, 看段错误的问题是否存在,<br>如果存在, 继续解决.<br>如果不存在, 则为Predict_cartype加入malloc错误验证<br>将car_lib_init中使用的malloc出来的内存, 全部换成从dsp那边拿来的内存, 这样是为了防止内存越界造成的malloc段错误.<br>结果问题依旧出现, 但是段错误的频率降低了很多<br>猜想是不是某个原因导致多个地方会出现问题, 自己堵住了一个方面, 但是还有另外的地方可能存在问题<h1 id="其他学习-9"><a href="#其他学习-9" class="headerlink" title="其他学习"></a>其他学习</h1></li>
+<li>总结了很多项待完成的项目. 写好了初稿, 还差总结发表的工作, 这个工作就留到星期五</li>
+</ol>
+<hr>
+<p><span id="inline_purple">10-26</span></p>
+<h1 id="今天收获10-26"><a href="#今天收获10-26" class="headerlink" title="今天收获10-26"></a>今天收获10-26</h1><h2 id="工作情况-11"><a href="#工作情况-11" class="headerlink" title="工作情况"></a>工作情况</h2><ol>
+<li>300w段错误问题<br>反复重启发现存在event_image_id乱掉的问题, 将所有涉及event_image_id的地方都加入了注释, 可能是某个复杂的原因导致了很多地方的段错误, 现在只能先一样一样堵住了<h1 id="其他学习-10"><a href="#其他学习-10" class="headerlink" title="其他学习"></a>其他学习</h1>发现许多嵌入式的工作都需要python和shell的技能去写一些脚本,自己有空去看看这方面的知识, 做一个小的总结.这两种语言, 自己都是只会皮毛. 总结一些常用的以防万一.</li>
+</ol>
+<hr>
+<p><span id="inline_purple">10-27</span></p>
+<h1 id="今天收获10-27"><a href="#今天收获10-27" class="headerlink" title="今天收获10-27"></a>今天收获10-27</h1><h2 id="工作情况-12"><a href="#工作情况-12" class="headerlink" title="工作情况"></a>工作情况</h2><p>为700w增加一些功能<br>1.10分钟重启一次<br>2.新来一个车型,  弹出一个车型, post新来的车型<br>3.查找整个队列, 看看有没有与新来的车型数字相同的5个车型, 如果有就设置标志</p>
+<hr>
+<p><span id="inline_purple">10-30</span></p>
+<h1 id="今天收获10-30"><a href="#今天收获10-30" class="headerlink" title="今天收获10-30"></a>今天收获10-30</h1><h2 id="工作情况-13"><a href="#工作情况-13" class="headerlink" title="工作情况"></a>工作情况</h2><ol>
+<li>700w问题<br>700w重启后问题一直不复现</li>
+<li>300w问题<br>300w段错误问题, 原因还是没有查到</li>
+</ol>
+<h2 id="其他学习-11"><a href="#其他学习-11" class="headerlink" title="其他学习"></a>其他学习</h2><p>1.搞清楚了指针相减结果的问题</p>
+<hr>
+<p><span id="inline_purple">10-31</span></p>
+<h1 id="今天收获10-31"><a href="#今天收获10-31" class="headerlink" title="今天收获10-31"></a>今天收获10-31</h1><h2 id="工作情况-14"><a href="#工作情况-14" class="headerlink" title="工作情况"></a>工作情况</h2><p>1.测试前端反映的车型bug</p>
 
       
     </div>
@@ -640,7 +693,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">17</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -732,7 +785,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#今天收获10-09"><span class="nav-number">1.</span> <span class="nav-text">今天收获10-09</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#工作情况"><span class="nav-number">1.1.</span> <span class="nav-text">工作情况</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他学习"><span class="nav-number">1.2.</span> <span class="nav-text">其他学习</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#今天收获10-10"><span class="nav-number">2.</span> <span class="nav-text">今天收获10-10</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#工作情况-1"><span class="nav-number">2.1.</span> <span class="nav-text">工作情况</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他学习-1"><span class="nav-number">2.2.</span> <span class="nav-text">其他学习</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#今天收获10-11"><span class="nav-number">3.</span> <span class="nav-text">今天收获10-11</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#工作情况-2"><span class="nav-number">3.1.</span> <span class="nav-text">工作情况</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他学习-2"><span class="nav-number">3.2.</span> <span class="nav-text">其他学习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#晚上完成任务"><span class="nav-number">3.3.</span> <span class="nav-text">晚上完成任务</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#今天收获10-12"><span class="nav-number">4.</span> <span class="nav-text">今天收获10-12</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#工作情况-3"><span class="nav-number">4.1.</span> <span class="nav-text">工作情况</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他学习-3"><span class="nav-number">4.2.</span> <span class="nav-text">其他学习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#晚上完成任务-1"><span class="nav-number">4.3.</span> <span class="nav-text">晚上完成任务</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#今天收获10-13"><span class="nav-number">5.</span> <span class="nav-text">今天收获10-13</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#工作情况-4"><span class="nav-number">5.1.</span> <span class="nav-text">工作情况</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他学习-4"><span class="nav-number">5.2.</span> <span class="nav-text">其他学习</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#周末任务"><span class="nav-number">6.</span> <span class="nav-text">周末任务</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#周末任务-1"><span class="nav-number">7.</span> <span class="nav-text">周末任务</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-了解多端同步hexo的方法"><span class="nav-number">7.1.</span> <span class="nav-text">1. 了解多端同步hexo的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#google同步迁移"><span class="nav-number">7.1.1.</span> <span class="nav-text">google同步迁移</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-把最后三课看完-写一个总结"><span class="nav-number">7.2.</span> <span class="nav-text">2. 把最后三课看完, 写一个总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-有空再把之前一直拖延的第二篇文章写完"><span class="nav-number">7.3.</span> <span class="nav-text">3. 有空再把之前一直拖延的第二篇文章写完</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-另外有空去整理一下备份的东西"><span class="nav-number">7.4.</span> <span class="nav-text">4. 另外有空去整理一下备份的东西</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#番外"><span class="nav-number">7.5.</span> <span class="nav-text">番外</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#遇到的问题"><span class="nav-number">8.</span> <span class="nav-text">遇到的问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#今天收获10-16"><span class="nav-number">9.</span> <span class="nav-text">今天收获10-16</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#工作情况-5"><span class="nav-number">9.1.</span> <span class="nav-text">工作情况</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他学习-5"><span class="nav-number">9.2.</span> <span class="nav-text">其他学习</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#今天收获10-09"><span class="nav-number">1.</span> <span class="nav-text">今天收获10-09</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#工作情况"><span class="nav-number">1.1.</span> <span class="nav-text">工作情况</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他学习"><span class="nav-number">1.2.</span> <span class="nav-text">其他学习</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#今天收获10-10"><span class="nav-number">2.</span> <span class="nav-text">今天收获10-10</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#工作情况-1"><span class="nav-number">2.1.</span> <span class="nav-text">工作情况</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他学习-1"><span class="nav-number">2.2.</span> <span class="nav-text">其他学习</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#今天收获10-11"><span class="nav-number">3.</span> <span class="nav-text">今天收获10-11</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#工作情况-2"><span class="nav-number">3.1.</span> <span class="nav-text">工作情况</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他学习-2"><span class="nav-number">3.2.</span> <span class="nav-text">其他学习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#晚上完成任务"><span class="nav-number">3.3.</span> <span class="nav-text">晚上完成任务</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#今天收获10-12"><span class="nav-number">4.</span> <span class="nav-text">今天收获10-12</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#工作情况-3"><span class="nav-number">4.1.</span> <span class="nav-text">工作情况</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他学习-3"><span class="nav-number">4.2.</span> <span class="nav-text">其他学习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#晚上完成任务-1"><span class="nav-number">4.3.</span> <span class="nav-text">晚上完成任务</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#今天收获10-13"><span class="nav-number">5.</span> <span class="nav-text">今天收获10-13</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#工作情况-4"><span class="nav-number">5.1.</span> <span class="nav-text">工作情况</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他学习-4"><span class="nav-number">5.2.</span> <span class="nav-text">其他学习</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#周末任务"><span class="nav-number">6.</span> <span class="nav-text">周末任务</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#周末任务-1"><span class="nav-number">7.</span> <span class="nav-text">周末任务</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-了解多端同步hexo的方法"><span class="nav-number">7.1.</span> <span class="nav-text">1. 了解多端同步hexo的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#google同步迁移"><span class="nav-number">7.1.1.</span> <span class="nav-text">google同步迁移</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-把最后三课看完-写一个总结"><span class="nav-number">7.2.</span> <span class="nav-text">2. 把最后三课看完, 写一个总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-有空再把之前一直拖延的第二篇文章写完"><span class="nav-number">7.3.</span> <span class="nav-text">3. 有空再把之前一直拖延的第二篇文章写完</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-另外有空去整理一下备份的东西"><span class="nav-number">7.4.</span> <span class="nav-text">4. 另外有空去整理一下备份的东西</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#番外"><span class="nav-number">7.5.</span> <span class="nav-text">番外</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#遇到的问题"><span class="nav-number">8.</span> <span class="nav-text">遇到的问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#今天收获10-16"><span class="nav-number">9.</span> <span class="nav-text">今天收获10-16</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#工作情况-5"><span class="nav-number">9.1.</span> <span class="nav-text">工作情况</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他学习-5"><span class="nav-number">9.2.</span> <span class="nav-text">其他学习</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#今天收获10-17"><span class="nav-number">10.</span> <span class="nav-text">今天收获10-17</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#工作情况-6"><span class="nav-number">10.1.</span> <span class="nav-text">工作情况</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他学习-6"><span class="nav-number">10.2.</span> <span class="nav-text">其他学习</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#今天收获10-18"><span class="nav-number">11.</span> <span class="nav-text">今天收获10-18</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#工作情况-7"><span class="nav-number">11.1.</span> <span class="nav-text">工作情况</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他学习-7"><span class="nav-number">11.2.</span> <span class="nav-text">其他学习</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#今天收获10-19"><span class="nav-number">12.</span> <span class="nav-text">今天收获10-19</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#工作情况-8"><span class="nav-number">12.1.</span> <span class="nav-text">工作情况</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他学习-8"><span class="nav-number">12.2.</span> <span class="nav-text">其他学习</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#今天收获10-20"><span class="nav-number">13.</span> <span class="nav-text">今天收获10-20</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#工作情况-9"><span class="nav-number">13.1.</span> <span class="nav-text">工作情况</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#今天收获10-23–10-25"><span class="nav-number">14.</span> <span class="nav-text">今天收获10/23–10/25</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#工作情况-10"><span class="nav-number">14.1.</span> <span class="nav-text">工作情况</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他学习-9"><span class="nav-number">15.</span> <span class="nav-text">其他学习</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#今天收获10-26"><span class="nav-number">16.</span> <span class="nav-text">今天收获10-26</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#工作情况-11"><span class="nav-number">16.1.</span> <span class="nav-text">工作情况</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他学习-10"><span class="nav-number">17.</span> <span class="nav-text">其他学习</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#今天收获10-27"><span class="nav-number">18.</span> <span class="nav-text">今天收获10-27</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#工作情况-12"><span class="nav-number">18.1.</span> <span class="nav-text">工作情况</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#今天收获10-30"><span class="nav-number">19.</span> <span class="nav-text">今天收获10-30</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#工作情况-13"><span class="nav-number">19.1.</span> <span class="nav-text">工作情况</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他学习-11"><span class="nav-number">19.2.</span> <span class="nav-text">其他学习</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#今天收获10-31"><span class="nav-number">20.</span> <span class="nav-text">今天收获10-31</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#工作情况-14"><span class="nav-number">20.1.</span> <span class="nav-text">工作情况</span></a></li></ol></li></ol></div>
             
 
           </div>
