@@ -86,7 +86,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="ptr," />
 
 
 
@@ -102,16 +102,18 @@
 
 
 
-<meta name="description" content="猜猜是那个">
-<meta property="og:type" content="website">
-<meta property="og:title" content="暗夜精淋&#39;s Blog">
-<meta property="og:url" content="http://linuxcc.top/categories/CSAPP/index.html">
+<meta name="description" content="本节是自己有时候对指针的使用犯迷糊的时候, 自己做的小实验, 目的是加深自己对指针使用方法的理解">
+<meta name="keywords" content="ptr">
+<meta property="og:type" content="article">
+<meta property="og:title" content="&lt;嚼烂C语言&gt; 指针迷惑点清扫">
+<meta property="og:url" content="http://linuxcc.top/2017/11/21/CLang1121/index.html">
 <meta property="og:site_name" content="暗夜精淋&#39;s Blog">
-<meta property="og:description" content="猜猜是那个">
+<meta property="og:description" content="本节是自己有时候对指针的使用犯迷糊的时候, 自己做的小实验, 目的是加深自己对指针使用方法的理解">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-11-21T07:58:06.131Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="暗夜精淋&#39;s Blog">
-<meta name="twitter:description" content="猜猜是那个">
+<meta name="twitter:title" content="&lt;嚼烂C语言&gt; 指针迷惑点清扫">
+<meta name="twitter:description" content="本节是自己有时候对指针的使用犯迷糊的时候, 自己做的小实验, 目的是加深自己对指针使用方法的理解">
 
 
 
@@ -141,13 +143,13 @@
 
 
 
-  <link rel="canonical" href="http://linuxcc.top/categories/CSAPP/"/>
+  <link rel="canonical" href="http://linuxcc.top/2017/11/21/CLang1121/"/>
 
 
 
 
 
-  <title>分类: CSAPP | 暗夜精淋's Blog</title>
+  <title><嚼烂C语言> 指针迷惑点清扫 | 暗夜精淋's Blog</title>
   
 
 
@@ -166,7 +168,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -314,167 +316,203 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block category">
-
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>CSAPP<small>分类</small>
-        </h1>
-      </div>
-
-      
-        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://linuxcc.top/2017/11/21/CLang1121/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="暗夜精淋">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/cat.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="暗夜精淋's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2017/10/18/CSAPP06/" itemprop="url">
-              
-                <span itemprop="name"><读薄CSAPP学习>五.异常控制流</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline"><嚼烂C语言> 指针迷惑点清扫</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-10-18T14:40:59+08:00"
-              content="2017-10-18" >
-          10-18
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-21T11:59:40+08:00">
+                2017-11-21
+              </time>
+            
 
-    </header>
-  </article>
+            
+              <span class="post-meta-divider">|</span>
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2017-11-21T15:58:06+08:00">
+                2017-11-21
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/c/" itemprop="url" rel="index">
+                    <span itemprop="name">c</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/10/17/CSAPP08/" itemprop="url">
-              
-                <span itemprop="name"><读薄CSAPP学习>七.虚拟内存与动态内存分配</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-10-17T13:39:29+08:00"
-              content="2017-10-17" >
-          10-17
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/10/16/CSAPP03/" itemprop="url">
-              
-                <span itemprop="name"><读薄CSAPP学习>二.机器指令与程序优化</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-10-16T16:39:20+08:00"
-              content="2017-10-16" >
-          10-16
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/10/10/CSAPP02/" itemprop="url">
-              
-                <span itemprop="name"><读薄CSAPP学习>一.数据表示</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-10-10T17:50:00+08:00"
-              content="2017-10-10" >
-          10-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/10/10/CSAPP01/" itemprop="url">
-              
-                <span itemprop="name"><读薄CSAPP学习>零.深入理解计算机系统</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-10-10T15:21:01+08:00"
-              content="2017-10-10" >
-          10-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+        <p>本节是自己有时候对指针的使用犯迷糊的时候, 自己做的小实验, 目的是加深自己对指针使用方法的理解</p>
+<a id="more"></a> 
+<hr>
+<p><span id="inline-purple">更新记录</span></p>
+<ul>
+<li>2017/11/19:写完初稿: 指针长度问题, 指针的加一问题</li>
+</ul>
+<h1 id="指针长度问题"><a href="#指针长度问题" class="headerlink" title="指针长度问题"></a>指针长度问题</h1><p>前几天在网上看到说<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">char *a[10];</div></pre></td></tr></table></figure></p>
+<p>问sizeof(a)的大小, 网上有人说是4, 认为当做指针看待</p>
+<p>但是a明明就是一个数组名, 只是中间存的全部是指针<br>这样sizeof(a)的大小应该是40</p>
+<p>网上也找不到什么说法</p>
+<p>于是自己做了实验<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">  <span class="keyword">char</span> *a[<span class="number">10</span>];</div><div class="line">  <span class="built_in">printf</span>(<span class="string">"*a[10] sizeof(a) = %d\n"</span>, <span class="keyword">sizeof</span>(a));</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>输出的结果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">*a[10] sizeof(a) = 40</div></pre></td></tr></table></figure></p>
+<p>所以应该把char *a[10]中a当做数组名来看待<br>大小应该是40</p>
+<h1 id="指针加一问题"><a href="#指针加一问题" class="headerlink" title="指针加一问题"></a>指针加一问题</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">	<span class="keyword">char</span> *a;</div><div class="line">	<span class="keyword">int</span> *b;</div><div class="line">	<span class="keyword">float</span> *c;</div><div class="line">	<span class="keyword">double</span> *d;</div><div class="line"></div><div class="line">	<span class="built_in">printf</span>(<span class="string">"addr:\na = %p, a+1 = %p\n"</span>, a, a+<span class="number">1</span>);</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"b = %p, b+1 = %p\n"</span>, b, b+<span class="number">1</span>);</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"c = %p, c+1 = %p\n"</span>, c, c+<span class="number">1</span>);</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"d = %p, d+1 = %p\n"</span>, d, d+<span class="number">1</span>);</div><div class="line"></div><div class="line">	<span class="comment">/*ptr xiangjian*/</span></div><div class="line">	<span class="keyword">int</span> *m, *n;</div><div class="line">	n = m+<span class="number">1</span>;</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"n = m +1\naddr: m n (%p %p)\nn-m %p\n"</span>, m, n, n-m);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>结果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">addr:</div><div class="line">a = 0x4d5cc0, a+1 = 0x4d5cc1</div><div class="line">b = 0x4d4ff4, b+1 = 0x4d4ff8</div><div class="line">c = 0x80484a0, c+1 = 0x80484a4</div><div class="line">d = 0x8048310, d+1 = 0x8048318</div><div class="line">n = m +1</div><div class="line">addr: m n (0x80484ab 0x80484af)</div><div class="line">n-m 0x1  //相减结果为1</div></pre></td></tr></table></figure></p>
+<p>得出结论:</p>
+<ul>
+<li>指针加一后, 其地址是增加 对应的数据类型长度</li>
+<li>但是加一后的指针减去原指针得到的结果是相差<strong>多少个</strong>数据类型, 并不是实际的地址长度差值.</li>
+</ul>
+<p>想想地址增加数据类型长度也是对的<br>每个指针指向一个字节(8位/16位), 如果该数据是多个字节(除了char), 那么加一后挪动一个数据长度是比较符合逻辑的. 要不然使用起来很麻烦.</p>
+<p>相应的可以推论, 结构体指针加一, 那么肯定地址也是加上结构体的长度</p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ptr/" rel="tag"><i class="fa fa-tag"></i> ptr</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/11/21/network1121/" rel="next" title="<蚕食网络知识> 红绿灯网络传输设计">
+                <i class="fa fa-chevron-left"></i> <蚕食网络知识> 红绿灯网络传输设计
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -482,6 +520,12 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMDYxMS83MTY2"></div>
+    
+  </div>
+
 
         </div>
         
@@ -502,8 +546,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           
             <img class="site-author-image" itemprop="image"
@@ -603,6 +656,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#指针长度问题"><span class="nav-number">1.</span> <span class="nav-text">指针长度问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#指针加一问题"><span class="nav-number">2.</span> <span class="nav-text">指针加一问题</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -755,6 +824,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
 
   
 
@@ -783,6 +856,17 @@
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 

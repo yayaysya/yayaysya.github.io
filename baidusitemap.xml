@@ -3,6 +3,60 @@
 
 
     
+  <url>
+    <loc>http://linuxcc.top/2017/11/21/network1121/</loc>
+    <lastmod>2017-11-21T07:58:07.458Z</lastmod>
+    <data>
+        <display>
+        <title><蚕食网络知识> 红绿灯网络传输设计</title>
+        <pubTime>2017-11-21T03:55:35.007Z</pubTime>
+        
+        <tag>socket</tag>
+         
+         
+           
+             
+              <breadCrumb title="network" url="http://linuxcc.top/categories/network/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://linuxcc.top/2017/11/21/CLang1121/</loc>
+    <lastmod>2017-11-21T07:58:06.131Z</lastmod>
+    <data>
+        <display>
+        <title><嚼烂C语言> 指针迷惑点清扫</title>
+        <pubTime>2017-11-21T03:59:40.574Z</pubTime>
+        
+        <tag>ptr</tag>
+         
+         
+           
+             
+              <breadCrumb title="c" url="http://linuxcc.top/categories/c/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://linuxcc.top/learning/index.html</loc>
+    <lastmod>2017-11-21T03:59:03.511Z</lastmod>
+    <data>
+        <display>
+        <title>蜀道难-个人学习的技术栈</title>
+        <pubTime>2017-10-10T16:00:00.000Z</pubTime>
+        
+         
+        </display>
+    </data>
+    </url>
+
+    
     
   <url>
     <loc>http://linuxcc.top/2017/10/18/LinuxExecve/</loc>
@@ -107,20 +161,6 @@
              
               <breadCrumb title="CSAPP" url="http://linuxcc.top/categories/CSAPP/"/>
           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://linuxcc.top/learning/index.html</loc>
-    <lastmod>2017-10-17T05:46:36.618Z</lastmod>
-    <data>
-        <display>
-        <title>蜀道难-个人学习的技术栈</title>
-        <pubTime>2017-10-10T16:00:00.000Z</pubTime>
-        
-         
         </display>
     </data>
     </url>
