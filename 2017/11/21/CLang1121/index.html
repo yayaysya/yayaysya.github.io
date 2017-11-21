@@ -110,10 +110,13 @@
 <meta property="og:site_name" content="暗夜精淋&#39;s Blog">
 <meta property="og:description" content="本节是自己有时候对指针的使用犯迷糊的时候, 自己做的小实验, 目的是加深自己对指针使用方法的理解">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-21T07:58:06.131Z">
+<meta property="og:image" content="http://ovlptpuvi.bkt.clouddn.com/blog/171121/aaK3e00Ae9.png?imageslim">
+<meta property="og:image" content="http://ovlptpuvi.bkt.clouddn.com/blog/171121/GKacE30mC6.png?imageslim">
+<meta property="og:updated_time" content="2017-11-21T08:21:40.761Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="&lt;嚼烂C语言&gt; 指针迷惑点清扫">
 <meta name="twitter:description" content="本节是自己有时候对指针的使用犯迷糊的时候, 自己做的小实验, 目的是加深自己对指针使用方法的理解">
+<meta name="twitter:image" content="http://ovlptpuvi.bkt.clouddn.com/blog/171121/aaK3e00Ae9.png?imageslim">
 
 
 
@@ -375,7 +378,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-11-21T15:58:06+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2017-11-21T16:21:40+08:00">
                 2017-11-21
               </time>
             
@@ -437,6 +440,7 @@
 <p><span id="inline-purple">更新记录</span></p>
 <ul>
 <li>2017/11/19:写完初稿: 指针长度问题, 指针的加一问题</li>
+<li>2017/11/21: 增加了字符串数组的使用问题</li>
 </ul>
 <h1 id="指针长度问题"><a href="#指针长度问题" class="headerlink" title="指针长度问题"></a>指针长度问题</h1><p>前几天在网上看到说<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">char *a[10];</div></pre></td></tr></table></figure></p>
 <p>问sizeof(a)的大小, 网上有人说是4, 认为当做指针看待</p>
@@ -444,16 +448,24 @@
 <p>网上也找不到什么说法</p>
 <p>于是自己做了实验<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">  <span class="keyword">char</span> *a[<span class="number">10</span>];</div><div class="line">  <span class="built_in">printf</span>(<span class="string">"*a[10] sizeof(a) = %d\n"</span>, <span class="keyword">sizeof</span>(a));</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>输出的结果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">*a[10] sizeof(a) = 40</div></pre></td></tr></table></figure></p>
-<p>所以应该把char *a[10]中a当做数组名来看待<br>大小应该是40</p>
+<p><strong>所以应该把char *a[10]中a当做数组名来看待  大小应该是40</strong></p>
 <h1 id="指针加一问题"><a href="#指针加一问题" class="headerlink" title="指针加一问题"></a>指针加一问题</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">	<span class="keyword">char</span> *a;</div><div class="line">	<span class="keyword">int</span> *b;</div><div class="line">	<span class="keyword">float</span> *c;</div><div class="line">	<span class="keyword">double</span> *d;</div><div class="line"></div><div class="line">	<span class="built_in">printf</span>(<span class="string">"addr:\na = %p, a+1 = %p\n"</span>, a, a+<span class="number">1</span>);</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"b = %p, b+1 = %p\n"</span>, b, b+<span class="number">1</span>);</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"c = %p, c+1 = %p\n"</span>, c, c+<span class="number">1</span>);</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"d = %p, d+1 = %p\n"</span>, d, d+<span class="number">1</span>);</div><div class="line"></div><div class="line">	<span class="comment">/*ptr xiangjian*/</span></div><div class="line">	<span class="keyword">int</span> *m, *n;</div><div class="line">	n = m+<span class="number">1</span>;</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"n = m +1\naddr: m n (%p %p)\nn-m %p\n"</span>, m, n, n-m);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>结果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">addr:</div><div class="line">a = 0x4d5cc0, a+1 = 0x4d5cc1</div><div class="line">b = 0x4d4ff4, b+1 = 0x4d4ff8</div><div class="line">c = 0x80484a0, c+1 = 0x80484a4</div><div class="line">d = 0x8048310, d+1 = 0x8048318</div><div class="line">n = m +1</div><div class="line">addr: m n (0x80484ab 0x80484af)</div><div class="line">n-m 0x1  //相减结果为1</div></pre></td></tr></table></figure></p>
 <p>得出结论:</p>
 <ul>
-<li>指针加一后, 其地址是增加 对应的数据类型长度</li>
-<li>但是加一后的指针减去原指针得到的结果是相差<strong>多少个</strong>数据类型, 并不是实际的地址长度差值.</li>
+<li>指针加一后, 其地址是增加<strong>对应的数据类型长度</strong></li>
+<li>加一后的指针减去原指针, 得到的结果是相差<strong>多少个数据类型</strong>, 并不是实际的地址长度差值.</li>
 </ul>
 <p>想想地址增加数据类型长度也是对的<br>每个指针指向一个字节(8位/16位), 如果该数据是多个字节(除了char), 那么加一后挪动一个数据长度是比较符合逻辑的. 要不然使用起来很麻烦.</p>
 <p>相应的可以推论, 结构体指针加一, 那么肯定地址也是加上结构体的长度</p>
+<h1 id="字符指针的使用问题"><a href="#字符指针的使用问题" class="headerlink" title="字符指针的使用问题"></a>字符指针的使用问题</h1><p>对于用法<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">char</span> *p = <span class="string">"12345"</span>;     <span class="comment">//-------------------A</span></div></pre></td></tr></table></figure></p>
+<p>之前一直抱有疑问, 这种用法到底对不对, 因为”12345”并没有创立这个变量<br>总觉得下面这种用法才是正确的<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">char</span> p[] = <span class="string">"12345"</span>;   <span class="comment">//---------------------B</span></div></pre></td></tr></table></figure></p>
+<p>今天经过验证, 发现这两种方法都是允许使用的<br>但是有很大的区别</p>
+<ul>
+<li>A中”12345”是存在<code>常数变量区域</code>, 也就是不可更改的, 只能读取使用, 不能写入</li>
+<li>B中”12345”是存在<code>p[]数组</code>里面的, 也就是存在<code>栈</code>里面, 所以可以读取和写入</li>
+</ul>
+<p>实验如下<br><img src="http://ovlptpuvi.bkt.clouddn.com/blog/171121/aaK3e00Ae9.png?imageslim" alt="mark"><br>结果<br><img src="http://ovlptpuvi.bkt.clouddn.com/blog/171121/GKacE30mC6.png?imageslim" alt="mark"><br>可见, 当我试图改变p指向的值的时候, 由于我去改变常变量区域的值, 所以发生了段错误.</p>
 
       
     </div>
@@ -493,6 +505,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/11/21/SuanFa1121/" rel="prev" title="<啃算法>绪论">
+                <啃算法>绪论 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -574,7 +590,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -585,7 +601,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -596,7 +612,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -666,7 +682,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#指针长度问题"><span class="nav-number">1.</span> <span class="nav-text">指针长度问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#指针加一问题"><span class="nav-number">2.</span> <span class="nav-text">指针加一问题</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#指针长度问题"><span class="nav-number">1.</span> <span class="nav-text">指针长度问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#指针加一问题"><span class="nav-number">2.</span> <span class="nav-text">指针加一问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#字符指针的使用问题"><span class="nav-number">3.</span> <span class="nav-text">字符指针的使用问题</span></a></li></ol></div>
             
 
           </div>
