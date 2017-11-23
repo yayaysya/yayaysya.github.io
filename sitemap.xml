@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://linuxcc.top/learning/index.html</loc>
+    
+    <lastmod>2017-11-23T07:17:10.298Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://linuxcc.top/2017/11/23/cLang1123/</loc>
     
     <lastmod>2017-11-23T07:01:43.209Z</lastmod>
@@ -40,13 +47,6 @@
     <loc>http://linuxcc.top/2017/11/21/SuanFaZhiShu1121/</loc>
     
     <lastmod>2017-11-21T10:11:58.574Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://linuxcc.top/learning/index.html</loc>
-    
-    <lastmod>2017-11-21T10:00:45.782Z</lastmod>
     
   </url>
   
