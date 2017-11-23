@@ -1,6 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[C语言中有没有引用调用的方式]]></title>
+    <url>%2F2017%2F11%2F23%2FcLang1123%2F</url>
+    <content type="text"><![CDATA[本节可以学到:C语言中是没有引用调用的方式的, 只有C++中才能使用这种引用调用 更新记录 2017/11/13:写完初稿 2017/11/23:发布到博客 C语言中是没有引用调用的方式的, 只有C++中才能使用这种引用调用 实验12345678910111213#include &lt;stdio.h&gt;int fun(int &amp;a)&#123; a = 100;&#125;int main()&#123; int a = 0; fun(a); printf(&quot;a %d\n&quot;, a);&#125; 在编译的时候会出错12[sls@CompilerServer chongmingTest]$gcc -o test test.ctest.c:3: error: expected ‘;’, ‘,’ or ‘)’ before ‘&amp;’ token 那为什么严蔚敏的数据结构书上这么写呢? 严蔚敏的数据结构书上这里的引用(&amp;)指的是希望通过函数改变该参数的值，在C语言里只能通过指针实现。所以这里写的是伪代码，而不是真正的C代码。具体使用的时候要想改变参数的值 还是要通过指针的方式来使用 参考链接1.https://www.zhihu.com/question/51582974]]></content>
+      <categories>
+        <category>c</category>
+      </categories>
+      <tags>
+        <tag>c</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[判断linux系统是32位还是64位]]></title>
+    <url>%2F2017%2F11%2F23%2FLinuxGetconf%2F</url>
+    <content type="text"><![CDATA[本节可以学到: getconf的简单使用 更新记录 2017/11/17:写完初稿 2017/11/23:发布到博客 工作总发现, 公司编写的makefile在加载lib库的时候, 可以根据系统是64位还是32位加载不同的turbojpeg库.做法123ARCH=$(shell getconf LONG_BIT)LFLAGS=-lpthread -lrt -L$(LIBDIR) -ltsmp_$(ARCH) -lturbojpeg_$(ARCH) 主要用到的方法时getconf命令 getconf LONG_BIT会返回系统的位数, 得到32或者64由于3.228系统是32位的, 所以才会去寻找libturbojpeg_32.lib文件, 所以会报错网上找到的一种用法12345if [ `getconf WORD_BIT` = '32' ] &amp;&amp; [ `getconf LONG_BIT` = '64' ] ; then ln -s /usr/local/lib/libmcrypt.la /usr/lib64/libmcrypt.laelse ln -s /usr/local/lib/libmcrypt.la /usr/lib/libmcrypt.lafi ln -s是软链接的使用方法]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>getconf</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[信号量/锁 理解]]></title>
+    <url>%2F2017%2F11%2F23%2FLinuxSemaphore%2F</url>
+    <content type="text"><![CDATA[本节可以学到 信号量的概念与作用 p v操作 具体的使用方法 与锁mutex的关系 信号量的概念与作用当用户创立多个线程／进程时，如果不同线程／进程同时读写相同的内容，则可能造成读写错误，或者数据不一致。此时，需要通过加锁的方式，控制核心区域(critical section)的访问权限。 对于semaphore而言，在初始化变量的时候可以控制允许多少个线程／进程同时访问一个critical section，其他的线程／进程会被堵塞，直到有人解锁。 pv操作信号量是一个确定的二元组（s，q)其中 s是一个具有非负初值的整形变量; q是一个初始状态为空的队列; 整形变量s表示系统中某类资源的数目： 当 S ≥ 0 时，表示系统中当前可用资源的数目 当 S &lt; 0 时，其绝对值表示系统中因请求该类资源而被阻塞的进程数目 运作方式： 初始化，给与它一个非负数的整数值。 企图进入临界区块的进程，需要先运行 P（wait()）。运行 P（wait()），信号量S的值将被减少。 减少后, 当信号量S&lt;0时，进程会被挡住，不能继续； 减少后, 当信号量S&gt;=0时，进程可以获准进入临界区块。 结束离开临界区块的进程，将会运行 V(又称signal())。运行 V（又称signal()），信号量S的值会被增加。 当信号量S不为负值时，先前被挡住的其他进程，将可获准进入临界区块 具体的使用12345int semget(key_t key, int num_sems, int sem_flags);int semop(int sem_id, struct sembuf *sem_opa, size_t num_sem_ops);int semctl(int sem_id, int sem_num, int command, ...); 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121122123#include &lt;unistd.h&gt;#include &lt;sys/types.h&gt;#include &lt;sys/stat.h&gt;#include &lt;fcntl.h&gt;#include &lt;stdlib.h&gt;#include &lt;stdio.h&gt;#include &lt;string.h&gt;#include &lt;sys/sem.h&gt;union semun&#123; int val; struct semid_ds *buf; unsigned short *arry;&#125;;static int sem_id = 0;static int set_semvalue();static void del_semvalue();static int semaphore_p();static int semaphore_v();int main(int argc, char *argv[])&#123; char message = 'X'; int i = 0; //创建信号量 sem_id = semget((key_t)1234, 1, 0666 | IPC_CREAT); if(argc &gt; 1) &#123; //程序第一次被调用，初始化信号量 if(!set_semvalue()) &#123; fprintf(stderr, "Failed to initialize semaphore\n"); exit(EXIT_FAILURE); &#125; //设置要输出到屏幕中的信息，即其参数的第一个字符 message = argv[1][0]; sleep(2); &#125; for(i = 0; i &lt; 10; ++i) &#123; //进入临界区 if(!semaphore_p()) exit(EXIT_FAILURE); //向屏幕中输出数据 printf("%c", message); //清理缓冲区，然后休眠随机时间 fflush(stdout); sleep(rand() % 3); //离开临界区前再一次向屏幕输出数据 printf("%c", message); fflush(stdout); //离开临界区，休眠随机时间后继续循环 if(!semaphore_v()) exit(EXIT_FAILURE); sleep(rand() % 2); &#125; sleep(10); printf("\n%d - finished\n", getpid()); if(argc &gt; 1) &#123; //如果程序是第一次被调用，则在退出前删除信号量 sleep(3); del_semvalue(); &#125; exit(EXIT_SUCCESS);&#125;static int set_semvalue()&#123; //用于初始化信号量，在使用信号量前必须这样做 union semun sem_union; sem_union.val = 1; if(semctl(sem_id, 0, SETVAL, sem_union) == -1) return 0; return 1;&#125;static void del_semvalue()&#123; //删除信号量 union semun sem_union; if(semctl(sem_id, 0, IPC_RMID, sem_union) == -1) fprintf(stderr, "Failed to delete semaphore\n");&#125;static int semaphore_p()&#123; //对信号量做减1操作，即等待P（sv） struct sembuf sem_b; sem_b.sem_num = 0; sem_b.sem_op = -1;//P() sem_b.sem_flg = SEM_UNDO; if(semop(sem_id, &amp;sem_b, 1) == -1) &#123; fprintf(stderr, "semaphore_p failed\n"); return 0; &#125; return 1;&#125;static int semaphore_v()&#123; //这是一个释放操作，它使信号量变为可用，即发送信号V（sv） struct sembuf sem_b; sem_b.sem_num = 0; sem_b.sem_op = 1;//V() sem_b.sem_flg = SEM_UNDO; if(semop(sem_id, &amp;sem_b, 1) == -1) &#123; fprintf(stderr, "semaphore_v failed\n"); return 0; &#125; return 1;&#125; 结果可以看到在同时运行./xinhaoliang o 和 ./xinhaoliang的情况下X和o分别都是成对出现的所以可以推断执行的过程 有一个进程先进入临界区域(p操作), 然后另一个进程在等待等进程退出临界区域(v操作), 另一个进程才进入了临界区域(p操作).所以在第一个进程在临界区内sleep的时候, 另一个进程就在外面等待 与锁的关系其实当设置信号量的最大值为1的时候, 就相当于锁的作用Mutex相当于只允许一个线程／进程访问的semaphore。 另外还有一种读写锁 它允许同时存在多个阅读者(reader)，但任何时候至多只有一个写者(writer)，且不能于读者共存。就是在锁的基础上放宽条件: 可以允许同时存在多个读的进程 关于死锁以及死锁的条件死锁是指两个或多个线程／进程之间相互阻塞，以至于任何一个都不能继续运行 线程A占有lock A，并且尝试获取lock B；而线程2占有lock B，尝试获取lock A。此时，两者相互阻塞，都无法继续运行。 死锁的条件 互斥条件(Mutual exclusion)：资源不能被共享，只能由一个进程使用。( 请求与保持条件(Hold and wait)：已经得到资源的进程可以再次申请新的资源。 非剥夺条件(No pre-emption)：已经分配的资源不能从相应的进程中被强制地剥夺。 循环等待条件(Circular wait)：系统中若干进程组成环路，该环路中每个进程都在等待相邻进程正占用的资源。 预防死锁的思想, 死锁的解决办法1. 忽略该问题。例如鸵鸟算法，该算法可以应用在极少发生死锁的的情况下。为什么叫鸵鸟算法呢，因为传说中鸵鸟看到危险就把头埋在地底下，可能鸵鸟觉得看不到危险也就没危险了吧。跟掩耳盗铃有点像。 2. 检测死锁并且恢复。 3. 仔细地对资源进行动态分配，以避免死锁。 4. 通过破除死锁四个必要条件之一，来防止死锁产生。]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>semaphore</tag>
+        <tag>mutex</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[volatile限定符与编译器优化]]></title>
+    <url>%2F2017%2F11%2F23%2FLinuxVolatile%2F</url>
+    <content type="text"><![CDATA[本节可以学到: volatile的使用; 编译器优化简单介绍 更新记录 2017/11/15:写完初稿 2017/11/23:发布到博客 编译器优化gcc 的编译器优化选项有-O0 -O1 -O2 -O3 -Os-O0为缺省值-Os为缩减目标文件的尺寸具体每种选项优化了哪些, 参考man page 例如 -O1优化会对同一地址的连续多次赋值做优化, 优化成只保留最后一次赋值123456a = b1;a = b2;a = b3;//优化为a = b3; 但是对于串口设备来说, 这种对同一地址的多次赋值是有意义的.此时就不需要这种优化此时就可以用volatile来对a进行修饰 volatile作用: 修饰变量, 告诉编译器, 即使在编译时我们指定了优化选项. 每次存取这个变量仍要老老实实从内存中存取而且不能省略任何步骤.1volatile unsigned char a ;]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>voatile</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[打印10000以内的质数]]></title>
     <url>%2F2017%2F11%2F21%2FSuanFaZhiShu1121%2F</url>
     <content type="text"><![CDATA[本篇文章主要介绍打印10000以内质数的方法 更新记录 2017/11/16:写完初稿 2017/11/21:发布到博客 教科书算法对每个数, 使用从2到n-1的数字作为除数,如果没有能除尽的数存在, 则这个数字为质数轻度改良使用从2到n的开根的数作为除数,可以降低算法复杂度 较好的算法使用分而治之的思路, 去除掉一些原本不可能存在的数, 剩下的就是可能的数字 新建一个10000长度的数组表,取出数字2, 然后去掉所有他的倍数取出数字3, 然后去除所有它的倍数取出下一个数, 然后去除所有它的倍数直到数字500这样的算法复杂度为O(1/8*n^2) //不准确, 应该有更好的方式具体的实现1//TBD]]></content>

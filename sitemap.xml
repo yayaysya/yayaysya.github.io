@@ -2,6 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://linuxcc.top/2017/11/23/cLang1123/</loc>
+    
+    <lastmod>2017-11-23T07:01:43.209Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://linuxcc.top/2017/11/23/LinuxGetconf/</loc>
+    
+    <lastmod>2017-11-23T06:55:03.432Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://linuxcc.top/2017/11/23/LinuxSemaphore/</loc>
+    
+    <lastmod>2017-11-23T06:46:46.244Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://linuxcc.top/2017/11/23/LinuxVolatile/</loc>
+    
+    <lastmod>2017-11-23T06:24:16.521Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://linuxcc.top/2017/11/21/SuanFa1121/</loc>
     
     <lastmod>2017-11-21T10:12:30.560Z</lastmod>
