@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://linuxcc.top/2017/12/12/LinuxShmget/</loc>
+    <lastmod>2017-12-12T08:57:09.473Z</lastmod>
+    <data>
+        <display>
+        <title><开linux系统挖掘机> linux共享内存的简单使用</title>
+        <pubTime>2017-12-12T08:57:08.694Z</pubTime>
+        
+        <tag>shmget</tag>
+         
+         
+           
+             
+              <breadCrumb title="linux" url="http://linuxcc.top/categories/linux/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://linuxcc.top/learning/index.html</loc>
     <lastmod>2017-11-23T07:17:10.298Z</lastmod>
     <data>

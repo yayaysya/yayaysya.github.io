@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[linux共享内存的简单使用]]></title>
+    <url>%2F2017%2F12%2F12%2FLinuxShmget%2F</url>
+    <content type="text"><![CDATA[本节可以学到: linux共享内存的作用 linux共享内存的使用 linux共享内存函数的功能以及参数的含义 更新记录 2017/12/10:写完初稿 2017/12/12:发布到博客 linux共享内存的简单使用功能说明 linux共享内存主要用于进程通信, 进程之间通过key值共享一块内存, 都访问这块内存从而实现通信 使用流程 shmget得到一块大小的共享内存 shmctl得到共享内存的状态,IPC_STAT：得到共享内存的状态，把共享内存的shmid_ds结构复制到buf中 shmat获得共享内存的地址, 之后操作这块地址即可 函数与参数shmget作用:得到一个共享内存标识符 或 创建一个共享内存对象并返回共享内存标识符参数说明1int shmget(key_t key, size_t size, int shmflg) key值0(IPC_PRIVATE)：会建立新共享内存对象大于0的32位整数：视参数shmflg来确定操作 size为设定的共享内存大小 shmflag0：取共享内存标识符，若不存在则函数会报错IPC_CREAT：当shmflg&amp;IPC_CREAT为真时，如果内核中不存在键值与key相等的共享内存，则新建一个共享内存；如果存在这样的共享内存，返回此共享内存的标识符 返回值返回共享内存的标识符 shmctl作用:实现对共享内存的控制参数说明1int shmctl(int shmid, int cmd, struct shmid_ds *buf) shmid为共享内存标识符 cmd为设定选项IPC_STAT：得到共享内存的状态，把共享内存的shmid_ds结构复制到buf中 buf共享内存管理结构体 返回值成功返回0 shmat作用:连接共享内存标识符为shmid的共享内存，连接成功后把共享内存区对象映射到调用进程的地址空间，随后可像本地空间一样访问参数说明1void *shmat(int shmid, const void *shmaddr, int shmflg) shmid是共享内存标志符 shmaddr指定共享内存出现在进程内存地址的什么位置，直接指定为NULL让内核自己决定一个合适的地址位置 shmflgSHM_RDONLY：为只读模式，其他为读写模式 返回值成功时返回得到的内存地址]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>shmget</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[C语言中有没有引用调用的方式]]></title>
     <url>%2F2017%2F11%2F23%2FcLang1123%2F</url>
     <content type="text"><![CDATA[本节可以学到:C语言中是没有引用调用的方式的, 只有C++中才能使用这种引用调用 更新记录 2017/11/13:写完初稿 2017/11/23:发布到博客 C语言中是没有引用调用的方式的, 只有C++中才能使用这种引用调用 实验12345678910111213#include &lt;stdio.h&gt;int fun(int &amp;a)&#123; a = 100;&#125;int main()&#123; int a = 0; fun(a); printf(&quot;a %d\n&quot;, a);&#125; 在编译的时候会出错12[sls@CompilerServer chongmingTest]$gcc -o test test.ctest.c:3: error: expected ‘;’, ‘,’ or ‘)’ before ‘&amp;’ token 那为什么严蔚敏的数据结构书上这么写呢? 严蔚敏的数据结构书上这里的引用(&amp;)指的是希望通过函数改变该参数的值，在C语言里只能通过指针实现。所以这里写的是伪代码，而不是真正的C代码。具体使用的时候要想改变参数的值 还是要通过指针的方式来使用 参考链接1.https://www.zhihu.com/question/51582974]]></content>
