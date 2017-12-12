@@ -86,7 +86,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="sufan," />
+  <meta name="keywords" content="hash," />
 
 
 
@@ -102,18 +102,23 @@
 
 
 
-<meta name="description" content="本篇文章主要介绍打印10000以内质数的方法">
-<meta name="keywords" content="sufan">
+<meta name="description" content="本节可以学到:  哈希表的概念 哈希表的用法">
+<meta name="keywords" content="hash">
 <meta property="og:type" content="article">
-<meta property="og:title" content="&lt;快速啃算法&gt;打印10000以内的质数">
-<meta property="og:url" content="http://linuxcc.top/2017/11/21/SuanFaZhiShu1121/index.html">
+<meta property="og:title" content="&lt;搭建数据结构&gt; 哈希表">
+<meta property="og:url" content="http://linuxcc.top/2017/12/12/DataStructHash/index.html">
 <meta property="og:site_name" content="暗夜精淋&#39;s Blog">
-<meta property="og:description" content="本篇文章主要介绍打印10000以内质数的方法">
+<meta property="og:description" content="本节可以学到:  哈希表的概念 哈希表的用法">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-21T10:11:58.574Z">
+<meta property="og:image" content="http://ovlptpuvi.bkt.clouddn.com/blog/171130/EFBaiA99g7.png?imageslim">
+<meta property="og:image" content="http://ovlptpuvi.bkt.clouddn.com/blog/171130/8adFhjki6F.png?imageslim">
+<meta property="og:image" content="http://ovlptpuvi.bkt.clouddn.com/blog/171130/jDAAcI7F6b.png?imageslim">
+<meta property="og:image" content="http://ovlptpuvi.bkt.clouddn.com/blog/171130/dkHCig9DDc.png?imageslim">
+<meta property="og:updated_time" content="2017-12-12T09:42:08.123Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="&lt;快速啃算法&gt;打印10000以内的质数">
-<meta name="twitter:description" content="本篇文章主要介绍打印10000以内质数的方法">
+<meta name="twitter:title" content="&lt;搭建数据结构&gt; 哈希表">
+<meta name="twitter:description" content="本节可以学到:  哈希表的概念 哈希表的用法">
+<meta name="twitter:image" content="http://ovlptpuvi.bkt.clouddn.com/blog/171130/EFBaiA99g7.png?imageslim">
 
 
 
@@ -143,13 +148,13 @@
 
 
 
-  <link rel="canonical" href="http://linuxcc.top/2017/11/21/SuanFaZhiShu1121/"/>
+  <link rel="canonical" href="http://linuxcc.top/2017/12/12/DataStructHash/"/>
 
 
 
 
 
-  <title><快速啃算法>打印10000以内的质数 | 暗夜精淋's Blog</title>
+  <title><搭建数据结构> 哈希表 | 暗夜精淋's Blog</title>
   
 
 
@@ -330,7 +335,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://linuxcc.top/2017/11/21/SuanFaZhiShu1121/">
+    <link itemprop="mainEntityOfPage" href="http://linuxcc.top/2017/12/12/DataStructHash/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="暗夜精淋">
@@ -347,7 +352,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline"><快速啃算法>打印10000以内的质数</h1>
+          <h1 class="post-title" itemprop="name headline"><搭建数据结构> 哈希表</h1>
         
 
         <div class="post-meta">
@@ -359,8 +364,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-21T18:04:10+08:00">
-                2017-11-21
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-12T17:42:03+08:00">
+                2017-12-12
               </time>
             
 
@@ -375,8 +380,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-11-21T18:11:58+08:00">
-                2017-11-21
+              <time title="更新于" itemprop="dateModified" datetime="2017-12-12T17:42:08+08:00">
+                2017-12-12
               </time>
             
           </span>
@@ -394,8 +399,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/suanfa/" itemprop="url" rel="index">
-                    <span itemprop="name">suanfa</span>
+                  <a href="/categories/DataStruct/" itemprop="url" rel="index">
+                    <span itemprop="name">DataStruct</span>
                   </a>
                 </span>
 
@@ -431,17 +436,39 @@
       
 
       
-        <p>本篇文章主要介绍打印10000以内质数的方法</p>
+        <p>本节可以学到:</p>
+<ul>
+<li>哈希表的概念</li>
+<li>哈希表的用法</li>
+</ul>
 <a id="more"></a> 
 <hr>
 <p><span id="inline-purple">更新记录</span></p>
 <ul>
-<li>2017/11/16:写完初稿</li>
-<li>2017/11/21:发布到博客</li>
+<li>2017/12/03:写完初稿</li>
+<li>2017/12/12:发布到博客</li>
 </ul>
-<h1 id="教科书算法"><a href="#教科书算法" class="headerlink" title="教科书算法"></a>教科书算法</h1><p>对每个数, 使用从2到n-1的数字作为除数,如果没有能除尽的数存在, 则这个数字为质数<br>轻度改良<br>使用从2到n的开根的数作为除数,可以降低算法复杂度</p>
-<h1 id="较好的算法"><a href="#较好的算法" class="headerlink" title="较好的算法"></a>较好的算法</h1><p>使用<code>分而治之</code>的思路, 去除掉一些原本不可能存在的数, 剩下的就是可能的数字</p>
-<p>新建一个10000长度的数组表,<br>取出数字2, 然后去掉所有他的倍数<br>取出数字3, 然后去除所有它的倍数<br>取出下一个数, 然后去除所有它的倍数<br>直到数字500<br>这样的算法复杂度为O(1/8*n^2)   //不准确, 应该有更好的方式<br>具体的实现<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//TBD</span></div></pre></td></tr></table></figure></p>
+<h1 id="哈希表"><a href="#哈希表" class="headerlink" title="哈希表"></a>哈希表</h1><p>哈希表就是一种以 <code>键-值(key-indexed)</code> 存储数据的结构，我们只要输入待查找的值即key，即可查找到其对应的值。</p>
+<p>哈希的思路很简单，如果所有的键都是整数，那么就可以使用一个简单的无序数组来实现：<strong>将键作为索引，值即为其对应的值，这样就可以快速访问任意键的值。</strong><br>像之前罗马数字的题目, 可以说就是利用了这种思想, 字符串相当于值, 键就是数组的索引.当时相当于在10以内的数建立一个hash, 100以内的10, 20, 30…90建立hash, 1000以内的100, 200, 300, 400, …900建立hash</p>
+<h1 id="哈希查找的两个步骤"><a href="#哈希查找的两个步骤" class="headerlink" title="哈希查找的两个步骤"></a>哈希查找的两个步骤</h1><ol>
+<li><strong>哈希函数的设计</strong>: 哈希函数将键值转换为数组的索引, 键可以是数字, 字符串, 或者是多个值的组合</li>
+<li><strong>处理哈希碰撞冲突</strong>: 哈希表建立的过程中会导致, 多个键在进行哈希函数转换后变为了相同的索引, 需要引入一些方法来区分这些相同的索引.</li>
+</ol>
+<h1 id="哈希函数"><a href="#哈希函数" class="headerlink" title="哈希函数"></a>哈希函数</h1><p>键可能是整数, 字符串…<br>目的是将其转化为索引</p>
+<h2 id="对于正整数"><a href="#对于正整数" class="headerlink" title="对于正整数"></a>对于正整数</h2><p>采用的办法是<code>保留余数法</code>. 即将每个<code>键</code>除以模M, 得到余数就是<code>索引</code></p>
+<h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><p>可以将每个字符取值, 转换为一个较大的整数, 再进行保留余数的方法,<br>将字符串转换为整数的方法可以使用<code>加权</code>的方法<br><img src="http://ovlptpuvi.bkt.clouddn.com/blog/171130/EFBaiA99g7.png?imageslim" alt="mark"></p>
+<blockquote>
+<p>比如要获取”call”的哈希值，字符串c对应的unicode为99，a对应的unicode为97，L对应的unicode为108，所以字符串”call”的哈希值为 3045982 = 99·313 + 97·312 + 108·311 + 108·310 = 108 + 31· (108 + 31 · (97 + 31 · (99)))</p>
+</blockquote>
+<p>也可以采用间隔N个字符来获取值再相加来得到转换的整数的方法</p>
+<h1 id="哈希碰撞冲突处理"><a href="#哈希碰撞冲突处理" class="headerlink" title="哈希碰撞冲突处理"></a>哈希碰撞冲突处理</h1><h2 id="拉链法"><a href="#拉链法" class="headerlink" title="拉链法"></a>拉链法</h2><p><code>使用链表的结构来解决冲突问题</code><br>对于多个具有相同索引值的情况, 可以将哈希表中每个值指向一个链表, 链表中每个节点都存储 转换为该索引值的键值对<br><img src="http://ovlptpuvi.bkt.clouddn.com/blog/171130/8adFhjki6F.png?imageslim" alt="mark"></p>
+<h2 id="线性探测法"><a href="#线性探测法" class="headerlink" title="线性探测法"></a>线性探测法</h2><p><code>使用数组的结构来解决冲突问题</code><br>基本上逻辑就是:<br>计算索引值, 查看索引对应的位置是否被占用, 如果被占用, 就让索引++, 继续查看是否被占用, …直到找到没被占用的, 然后将键值对填进去<br><strong>最终的结构</strong><br><img src="http://ovlptpuvi.bkt.clouddn.com/blog/171130/jDAAcI7F6b.png?imageslim" alt="mark"><br><strong>基本上逻辑</strong><br><img src="http://ovlptpuvi.bkt.clouddn.com/blog/171130/dkHCig9DDc.png?imageslim" alt="mark"></p>
+<h1 id="哈希碰撞攻击"><a href="#哈希碰撞攻击" class="headerlink" title="哈希碰撞攻击"></a>哈希碰撞攻击</h1><p>哈希表攻击, 就是通过精心构造哈希函数, <strong>使得所有的键经过哈希函数后都映射到了同一个或者几个索引上, 将哈希表退化为一个单链表,</strong> 这样哈希表的各种操作就需要大量的时间, 消耗CPU的资源, 导致系统无法响应</p>
+<h1 id="哈希表题目演练"><a href="#哈希表题目演练" class="headerlink" title="哈希表题目演练"></a>哈希表题目演练</h1><h2 id="Group-Anagrams"><a href="#Group-Anagrams" class="headerlink" title="Group Anagrams"></a>Group Anagrams</h2><p>Given an array of strings, group anagrams together.<br>For example, given: <code>[&quot;eat&quot;, &quot;tea&quot;, &quot;tan&quot;, &quot;ate&quot;, &quot;nat&quot;, &quot;bat&quot;]</code><br>Return:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">[</div><div class="line">  [&quot;ate&quot;, &quot;eat&quot;,&quot;tea&quot;],</div><div class="line">  [&quot;nat&quot;,&quot;tan&quot;],</div><div class="line">  [&quot;bat&quot;]</div><div class="line">]</div></pre></td></tr></table></figure></p>
+<p>中文翻译:<br>就是给你一个全是字符串的数组, 将其中的anagrams字符串分组<br>, 就是将含有相同字母的字符串分到一组.并且组内是按照字母顺序排列</p>
+<p>解决方法:<br>C语言实现这个算法比较麻烦, 网上有c++的实现方法<br>但是c++实现需要使用stl标准模板库, 这种东西现在好像没有多少人用,快废弃掉了, 所以看看java有没有好的实现方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//based on hash</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">getHash</span><span class="params">(<span class="keyword">int</span>[] count)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> hash = <span class="number">0</span>;</div><div class="line">        <span class="keyword">int</span> a = <span class="number">378551</span>;</div><div class="line">        <span class="keyword">int</span> b = <span class="number">63689</span>;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> num : count) &#123;</div><div class="line">            hash = hash * a + num;</div><div class="line">            a = a * b;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> hash;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> ArrayList&lt;String&gt; <span class="title">anagrams</span><span class="params">(String[] strs)</span> </span>&#123;</div><div class="line">        ArrayList&lt;String&gt; result = <span class="keyword">new</span> ArrayList&lt;String&gt;();</div><div class="line">        HashMap&lt;Integer, ArrayList&lt;String&gt;&gt; map = <span class="keyword">new</span> HashMap&lt;Integer, ArrayList&lt;String&gt;&gt;();</div><div class="line"></div><div class="line">        <span class="keyword">for</span> (String str : strs) &#123;</div><div class="line">            <span class="keyword">int</span>[] count = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">26</span>];</div><div class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; str.length(); i++) &#123;</div><div class="line">                count[str.charAt(i) - <span class="string">'a'</span>]++;</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            <span class="keyword">int</span> hash = getHash(count);</div><div class="line">            <span class="keyword">if</span> (!map.containsKey(hash)) &#123;</div><div class="line">                map.put(hash, <span class="keyword">new</span> ArrayList&lt;String&gt;());</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            map.get(hash).add(str);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="keyword">for</span> (ArrayList&lt;String&gt; tmp : map.values()) &#123;</div><div class="line">            <span class="keyword">if</span> (tmp.size() &gt; <span class="number">1</span>) &#123;</div><div class="line">                result.addAll(tmp);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="keyword">return</span> result;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>基本上这个算法就是借助了java中现成的哈希表来操作, 因为各种方法都是写好的, 实际上就是调用方法就可以了</p>
+<p>具体思路就是<br>1.创建哈希表<br>2.计算每个字符串的哈希值(计算hash值的方法时rshash).<br>3.将哈希值-字符串加入哈希表, 加入的过程中自动排好队了,<br>4.然后将表中的字符串的值, 从上到下添加到arrayList类型的result动态数组中去.return result即可</p>
 
       
     </div>
@@ -459,7 +486,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/sufan/" rel="tag"><i class="fa fa-tag"></i> sufan</a>
+            <a href="/tags/hash/" rel="tag"><i class="fa fa-tag"></i> hash</a>
           
         </div>
       
@@ -472,8 +499,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/11/21/SuanFa1121/" rel="next" title="<啃算法>绪论">
-                <i class="fa fa-chevron-left"></i> <啃算法>绪论
+              <a href="/2017/12/12/LinuxShmget/" rel="next" title="<开linux系统挖掘机> linux共享内存的简单使用">
+                <i class="fa fa-chevron-left"></i> <开linux系统挖掘机> linux共享内存的简单使用
               </a>
             
           </div>
@@ -482,8 +509,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/11/23/LinuxVolatile/" rel="prev" title="<开linux系统挖掘机> volatile限定符与编译器优化">
-                <开linux系统挖掘机> volatile限定符与编译器优化 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/12/12/LinuxSocketIPC/" rel="prev" title="<开linux挖掘机> linux通过socket实现进程间通信">
+                <开linux挖掘机> linux通过socket实现进程间通信 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -658,7 +685,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#教科书算法"><span class="nav-number">1.</span> <span class="nav-text">教科书算法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#较好的算法"><span class="nav-number">2.</span> <span class="nav-text">较好的算法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#哈希表"><span class="nav-number">1.</span> <span class="nav-text">哈希表</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#哈希查找的两个步骤"><span class="nav-number">2.</span> <span class="nav-text">哈希查找的两个步骤</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#哈希函数"><span class="nav-number">3.</span> <span class="nav-text">哈希函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#对于正整数"><span class="nav-number">3.1.</span> <span class="nav-text">对于正整数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符串"><span class="nav-number">3.2.</span> <span class="nav-text">字符串</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#哈希碰撞冲突处理"><span class="nav-number">4.</span> <span class="nav-text">哈希碰撞冲突处理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#拉链法"><span class="nav-number">4.1.</span> <span class="nav-text">拉链法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线性探测法"><span class="nav-number">4.2.</span> <span class="nav-text">线性探测法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#哈希碰撞攻击"><span class="nav-number">5.</span> <span class="nav-text">哈希碰撞攻击</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#哈希表题目演练"><span class="nav-number">6.</span> <span class="nav-text">哈希表题目演练</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Group-Anagrams"><span class="nav-number">6.1.</span> <span class="nav-text">Group Anagrams</span></a></li></ol></li></ol></div>
             
 
           </div>

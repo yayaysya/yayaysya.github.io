@@ -4,6 +4,46 @@
 
     
   <url>
+    <loc>http://linuxcc.top/2017/12/12/LinuxSocketIPC/</loc>
+    <lastmod>2017-12-12T09:46:47.232Z</lastmod>
+    <data>
+        <display>
+        <title><开linux挖掘机> linux通过socket实现进程间通信</title>
+        <pubTime>2017-12-12T09:46:47.075Z</pubTime>
+        
+        <tag>socket</tag>
+         
+         
+           
+             
+              <breadCrumb title="IPC" url="http://linuxcc.top/categories/IPC/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://linuxcc.top/2017/12/12/DataStructHash/</loc>
+    <lastmod>2017-12-12T09:42:08.123Z</lastmod>
+    <data>
+        <display>
+        <title><搭建数据结构> 哈希表</title>
+        <pubTime>2017-12-12T09:42:03.353Z</pubTime>
+        
+        <tag>hash</tag>
+         
+         
+           
+             
+              <breadCrumb title="DataStruct" url="http://linuxcc.top/categories/DataStruct/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://linuxcc.top/2017/12/12/LinuxShmget/</loc>
     <lastmod>2017-12-12T08:57:09.473Z</lastmod>
     <data>

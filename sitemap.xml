@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://linuxcc.top/2017/12/12/LinuxSocketIPC/</loc>
+    
+    <lastmod>2017-12-12T09:46:47.232Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://linuxcc.top/2017/12/12/DataStructHash/</loc>
+    
+    <lastmod>2017-12-12T09:42:08.123Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://linuxcc.top/2017/12/12/LinuxShmget/</loc>
     
     <lastmod>2017-12-12T08:57:09.473Z</lastmod>

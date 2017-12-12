@@ -86,7 +86,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="sufan," />
+  <meta name="keywords" content="socket," />
 
 
 
@@ -102,18 +102,18 @@
 
 
 
-<meta name="description" content="本篇文章主要介绍打印10000以内质数的方法">
-<meta name="keywords" content="sufan">
+<meta name="description" content="本节可以学到:   通过socket来实现本机进程间通信的过程">
+<meta name="keywords" content="socket">
 <meta property="og:type" content="article">
-<meta property="og:title" content="&lt;快速啃算法&gt;打印10000以内的质数">
-<meta property="og:url" content="http://linuxcc.top/2017/11/21/SuanFaZhiShu1121/index.html">
+<meta property="og:title" content="&lt;开linux挖掘机&gt; linux通过socket实现进程间通信">
+<meta property="og:url" content="http://linuxcc.top/2017/12/12/LinuxSocketIPC/index.html">
 <meta property="og:site_name" content="暗夜精淋&#39;s Blog">
-<meta property="og:description" content="本篇文章主要介绍打印10000以内质数的方法">
+<meta property="og:description" content="本节可以学到:   通过socket来实现本机进程间通信的过程">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-21T10:11:58.574Z">
+<meta property="og:updated_time" content="2017-12-12T09:46:47.232Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="&lt;快速啃算法&gt;打印10000以内的质数">
-<meta name="twitter:description" content="本篇文章主要介绍打印10000以内质数的方法">
+<meta name="twitter:title" content="&lt;开linux挖掘机&gt; linux通过socket实现进程间通信">
+<meta name="twitter:description" content="本节可以学到:   通过socket来实现本机进程间通信的过程">
 
 
 
@@ -143,13 +143,13 @@
 
 
 
-  <link rel="canonical" href="http://linuxcc.top/2017/11/21/SuanFaZhiShu1121/"/>
+  <link rel="canonical" href="http://linuxcc.top/2017/12/12/LinuxSocketIPC/"/>
 
 
 
 
 
-  <title><快速啃算法>打印10000以内的质数 | 暗夜精淋's Blog</title>
+  <title><开linux挖掘机> linux通过socket实现进程间通信 | 暗夜精淋's Blog</title>
   
 
 
@@ -330,7 +330,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://linuxcc.top/2017/11/21/SuanFaZhiShu1121/">
+    <link itemprop="mainEntityOfPage" href="http://linuxcc.top/2017/12/12/LinuxSocketIPC/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="暗夜精淋">
@@ -347,7 +347,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline"><快速啃算法>打印10000以内的质数</h1>
+          <h1 class="post-title" itemprop="name headline"><开linux挖掘机> linux通过socket实现进程间通信</h1>
         
 
         <div class="post-meta">
@@ -359,8 +359,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-21T18:04:10+08:00">
-                2017-11-21
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-12T17:46:47+08:00">
+                2017-12-12
               </time>
             
 
@@ -375,8 +375,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-11-21T18:11:58+08:00">
-                2017-11-21
+              <time title="更新于" itemprop="dateModified" datetime="2017-12-12T17:46:47+08:00">
+                2017-12-12
               </time>
             
           </span>
@@ -394,8 +394,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/suanfa/" itemprop="url" rel="index">
-                    <span itemprop="name">suanfa</span>
+                  <a href="/categories/IPC/" itemprop="url" rel="index">
+                    <span itemprop="name">IPC</span>
                   </a>
                 </span>
 
@@ -431,17 +431,45 @@
       
 
       
-        <p>本篇文章主要介绍打印10000以内质数的方法</p>
+        <p>本节可以学到: </p>
+<ol>
+<li>通过socket来实现本机进程间通信的过程</li>
+</ol>
 <a id="more"></a> 
 <hr>
 <p><span id="inline-purple">更新记录</span></p>
 <ul>
-<li>2017/11/16:写完初稿</li>
-<li>2017/11/21:发布到博客</li>
+<li>2017/12/10:写完初稿</li>
+<li>2017/12/12:发布到博客</li>
 </ul>
-<h1 id="教科书算法"><a href="#教科书算法" class="headerlink" title="教科书算法"></a>教科书算法</h1><p>对每个数, 使用从2到n-1的数字作为除数,如果没有能除尽的数存在, 则这个数字为质数<br>轻度改良<br>使用从2到n的开根的数作为除数,可以降低算法复杂度</p>
-<h1 id="较好的算法"><a href="#较好的算法" class="headerlink" title="较好的算法"></a>较好的算法</h1><p>使用<code>分而治之</code>的思路, 去除掉一些原本不可能存在的数, 剩下的就是可能的数字</p>
-<p>新建一个10000长度的数组表,<br>取出数字2, 然后去掉所有他的倍数<br>取出数字3, 然后去除所有它的倍数<br>取出下一个数, 然后去除所有它的倍数<br>直到数字500<br>这样的算法复杂度为O(1/8*n^2)   //不准确, 应该有更好的方式<br>具体的实现<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//TBD</span></div></pre></td></tr></table></figure></p>
+<p>在看礼让行人代码的时候看到了通过使用socket来进行本地进程间通信的过程.<br>使用网络通信的那一套来实现进程间通信, 这点还是很有意思的.</p>
+<h1 id="实现步骤"><a href="#实现步骤" class="headerlink" title="实现步骤"></a>实现步骤</h1><p>步骤与socket网络通信的过程类似</p>
+<h2 id="server-process"><a href="#server-process" class="headerlink" title="server_process"></a>server_process</h2><ol>
+<li><code>connection_socket = socket(AF_UNIX, SOCK_SEQPACKET, 0);</code>创建AF_UNIX类型的socket</li>
+<li>填充<code>socketaddr_un</code>结构, 使用<code>ret = bind(connection_socket, (const struct sockaddr *) &amp;name, sizeof(struct sockaddr_un));</code>进行bind</li>
+<li><code>ret = listen(connection_socket, 20)</code>;监听套接字</li>
+<li><code>data_socket = accept(connection_socket, NULL, NULL);</code>等待客户端的链接</li>
+<li><code>ret = read(data_socket, buffer, BUFFER_SIZE);</code>读取客户端的内容<h2 id="client-process"><a href="#client-process" class="headerlink" title="client_process"></a>client_process</h2></li>
+<li><code>data_socket = socket(AF_UNIX, SOCK_SEQPACKET, 0);</code>创建AF_UNIX类型的socket</li>
+<li><code>ret = connect (data_socket, (const struct sockaddr *) &amp;addr, sizeof(struct sockaddr_un));</code>使用connect对服务端进行连接</li>
+<li><code>ret = write(data_socket, argv[i], strlen(argv[i]) + 1);</code>发送数据</li>
+</ol>
+<h1 id="函数以及参数分析"><a href="#函数以及参数分析" class="headerlink" title="函数以及参数分析"></a>函数以及参数分析</h1><h2 id="socket函数"><a href="#socket函数" class="headerlink" title="socket函数"></a>socket函数</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">unix_socket = socket(AF_UNIX, type, <span class="number">0</span>);</div></pre></td></tr></table></figure>
+<ol>
+<li><code>AF_UNIX</code> 与 <code>AF_LOCAL</code>含义相同, 是用来实现本机间进程通信的协议族</li>
+<li>第二个参数是套接字类型, 合法的套接字类型SOCK_STREAM(数据流) SOCK_STREAM(有边界的数据报) SOCK_SEQPACKET<br>SOCK_SEQPACKET 的含义是 面向连接, 保留数据边界, 按照发送的顺序传递消息的方式(这个只有AF_UNIX中有, AF_INET中没有)</li>
+<li>第三个参数就是0<h2 id="bind函数"><a href="#bind函数" class="headerlink" title="bind函数"></a>bind函数</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">bind</span><span class="params">(<span class="keyword">int</span> sockfd, <span class="keyword">const</span> struct sockaddr *addr, <span class="keyword">socklen_t</span> addrlen)</span></span>;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>bind的第二个参数, struct sockaddr_un name;初始化方法<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*sockaddr_un的原型*/</span></div><div class="line"> <span class="class"><span class="keyword">struct</span> <span class="title">sockaddr_un</span> </span></div><div class="line"><span class="class">&#123;</span></div><div class="line">   <span class="keyword">sa_family_t</span> sun_family;               <span class="comment">/* AF_UNIX */</span></div><div class="line">   <span class="keyword">char</span>        sun_path[<span class="number">108</span>];            <span class="comment">/* pathname */</span></div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="comment">/*初始化方法*/</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> MY_SOCK_PATH <span class="meta-string">"/somepath"</span>  </span></div><div class="line"><span class="comment">/*a UNIX domain socket can be bound to a null-terminated filesystem pathname using bind(2). </span></div><div class="line"><span class="comment">大致含义是每个unixsocket都要绑定到一个以nulll结尾的文件系统路径名上, 一般就是一个就是文件名*/</span></div><div class="line">...</div><div class="line"><span class="built_in">memset</span>(&amp;my_addr, <span class="number">0</span>, <span class="keyword">sizeof</span>(struct sockaddr_un));</div><div class="line"><span class="comment">/* Clear structure */</span></div><div class="line">my_addr.sun_family = AF_UNIX;</div><div class="line"><span class="built_in">strncpy</span>(my_addr.sun_path, MY_SOCK_PATH, <span class="keyword">sizeof</span>(my_addr.sun_path) - <span class="number">1</span>);</div></pre></td></tr></table></figure></p>
+<h1 id="自己的代码相关内容分析"><a href="#自己的代码相关内容分析" class="headerlink" title="自己的代码相关内容分析"></a>自己的代码相关内容分析</h1><p>自己的代码的逻辑很简单</p>
+<ol>
+<li>利用socket创建unix socket, event_recv函数是客户端 </li>
+<li>创建socket之后, 要发送snd_buf内容给工控机里另一个进程, 如果发送失败, 就关闭socket, 并重新创建socket; 然后read另一个进程发过来的结果</li>
+</ol>
+<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><ol>
+<li><a href="http://man7.org/linux/man-pages/man7/unix.7.html" target="_blank" rel="external">man.org</a></li>
+</ol>
 
       
     </div>
@@ -459,7 +487,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/sufan/" rel="tag"><i class="fa fa-tag"></i> sufan</a>
+            <a href="/tags/socket/" rel="tag"><i class="fa fa-tag"></i> socket</a>
           
         </div>
       
@@ -472,8 +500,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/11/21/SuanFa1121/" rel="next" title="<啃算法>绪论">
-                <i class="fa fa-chevron-left"></i> <啃算法>绪论
+              <a href="/2017/12/12/DataStructHash/" rel="next" title="<搭建数据结构> 哈希表">
+                <i class="fa fa-chevron-left"></i> <搭建数据结构> 哈希表
               </a>
             
           </div>
@@ -481,10 +509,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/11/23/LinuxVolatile/" rel="prev" title="<开linux系统挖掘机> volatile限定符与编译器优化">
-                <开linux系统挖掘机> volatile限定符与编译器优化 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -658,7 +682,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#教科书算法"><span class="nav-number">1.</span> <span class="nav-text">教科书算法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#较好的算法"><span class="nav-number">2.</span> <span class="nav-text">较好的算法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#实现步骤"><span class="nav-number">1.</span> <span class="nav-text">实现步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#server-process"><span class="nav-number">1.1.</span> <span class="nav-text">server_process</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#client-process"><span class="nav-number">1.2.</span> <span class="nav-text">client_process</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#函数以及参数分析"><span class="nav-number">2.</span> <span class="nav-text">函数以及参数分析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#socket函数"><span class="nav-number">2.1.</span> <span class="nav-text">socket函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bind函数"><span class="nav-number">2.2.</span> <span class="nav-text">bind函数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#自己的代码相关内容分析"><span class="nav-number">3.</span> <span class="nav-text">自己的代码相关内容分析</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考链接"><span class="nav-number">4.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
             
 
           </div>
